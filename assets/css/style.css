@@ -1695,6 +1695,19 @@ textarea.form-control {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-section {
+  display: block;
+}
+
+.legal-divider {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  margin: 36px 0;
 }
 
 .legal-card h2 {

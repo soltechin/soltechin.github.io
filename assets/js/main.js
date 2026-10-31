@@ -451,11 +451,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // Toggle bilingual blocks on legal/detail pages cleanly
     document.querySelectorAll("[data-lang-block]").forEach((block) => {
-      if (block.getAttribute("data-lang-block") === lang) {
-        block.style.display = "";
+      // If the block is an independent legal section, keep both visible and reorder them
+      if (block.classList.contains("legal-section")) {
+        block.style.display = "block";
+        if (lang === "tr") {
+          block.style.order = block.getAttribute("data-lang-block") === "tr" ? "1" : "3";
+        } else {
+          block.style.order = block.getAttribute("data-lang-block") === "en" ? "1" : "3";
+        }
       } else {
-        block.style.display = "none";
+        if (block.getAttribute("data-lang-block") === lang) {
+          block.style.display = "";
+        } else {
+          block.style.display = "none";
+        }
       }
+    });
+
+    // Control legal divider order between TR and EN
+    document.querySelectorAll(".legal-divider").forEach((divider) => {
+      divider.style.order = "2";
     });
 
     // Update document title dynamically based on route and language
