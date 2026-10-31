@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kapalı Test Katılımcı Başvurusu — soltechin</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=5" />
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/img/logo-icon.png" alt="soltechin Logo" />
+        <div class="brand-wordmark">
+          <div class="brand-name"><span class="brand-sol">sol</span><span class="brand-tech">tech</span><span class="brand-in">in</span></div>
+          <div class="brand-tagline">MOBILE APPS &amp; GAMES</div>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="control-btn">
+          <span data-lang-block="tr">← Ana Sayfa</span>
+          <span data-lang-block="en" style="display: none;">← Home</span>
+        </a>
+        <div class="lang-select-wrapper">
+          <select id="langSelect" class="lang-select" aria-label="Dil / Language">
+            <option value="tr">🇹🇷 TR</option>
+            <option value="en">🇬🇧 EN</option>
+          </select>
+          <span class="lang-select-arrow" aria-hidden="true">▾</span>
+        </div>
+        <button class="control-btn" id="themeToggle" aria-label="Açık Temaya Geç" title="Açık Tema">☀️ Açık</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SUBPAGE HERO ==================== -->
+  <div class="subpage-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">soltechin</a> <span>/</span>
+        <strong data-i18n="beta.breadcrumb">Kapalı Test Başvurusu</strong>
+      </div>
+      <div class="section-badge" style="margin-bottom: 10px;">
+        <span class="dot"></span>
+        <span data-i18n="beta.badge">GOOGLE PLAY KAPALI TEST &amp; APPLE TESTFLIGHT</span>
+      </div>
+      <h1 class="section-title" style="margin-bottom: 8px;">
+        <span data-i18n="beta.title">Testçi Olmak İstiyorum</span>
+      </h1>
+      <p style="color: var(--text-secondary); max-width: 700px;" data-i18n="beta.desc">
+        Aşağıdaki 3 adımı tamamlayarak test aşamasındaki mobil uygulama ve oyunlarımızın kapalı test ekibine katılabilirsiniz. Başvurunuz doğrudan geliştirici e-postamıza iletilir ve davet linkiniz gönderilir.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== 3-STEP INTERACTIVE WIZARD ==================== -->
+  <div class="wizard-container">
+    <form id="betaTesterForm">
+
+      <!-- ADIM 1: PLATFORM SEÇİMİ -->
+      <div class="wizard-step-card active-step" id="step1Card">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800;" data-i18n="beta.s1.title">Testçi Olmak İstediğiniz Platformu Seçin</h2>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);" data-i18n="beta.s1.desc">Seçiminize göre 3. adımda ilgili mağazanın zorunlu alanları açılacaktır.</p>
+          </div>
+        </div>
+
+        <div class="platform-grid" id="platformSelector">
+          <label class="selectable-card selected" data-platform="android">
+            <input type="radio" name="platform" value="Android" checked />
+            <div class="selectable-top">
+              <span class="platform-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#00d2ff" d="M3.2 2.2c-.3.3-.5.8-.5 1.4v16.8c0 .6.2 1.1.5 1.4l.1.1L12.7 12v-.2L3.2 2.2z"/>
+                  <path fill="#ffbc00" d="M15.9 15.3L12.7 12v-.2l3.2-3.2.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.8 2.3z"/>
+                  <path fill="#ff3a44" d="M16 15.2L12.7 12 3.2 21.8c.4.4 1 .4 1.7 0l11.1-6.6z"/>
+                  <path fill="#00f076" d="M16 8.8L4.9 2.2c-.7-.4-1.3-.4-1.7 0L12.7 12 16 8.8z"/>
+                </svg>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong data-i18n="beta.s1.android_title">Android</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.s1.android_sub">
+              Google Play Kapalı Test Programı
+            </span>
+          </label>
+
+          <label class="selectable-card" data-platform="ios">
+            <input type="radio" name="platform" value="iOS" />
+            <div class="selectable-top">
+              <span class="platform-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.33c.67-.81 1.12-1.94 1-3.08-.96.04-2.13.64-2.82 1.45-.61.7-.15 1.86-1.01 2.98 1.08.08 2.16-.54 2.83-1.35"/>
+                </svg>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong data-i18n="beta.s1.ios_title">iOS</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.s1.ios_sub">
+              iPhone ve iPad için Apple TestFlight Erken Erişim
+            </span>
+          </label>
+
+          <label class="selectable-card" data-platform="both">
+            <input type="radio" name="platform" value="Android & iOS" />
+            <div class="selectable-top">
+              <span class="platform-icon-wrap" style="color: #a855f7;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong data-i18n="beta.s1.both_title">Android &amp; iOS</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.s1.both_sub">
+              Hem Android hem iOS cihazım var, her iki platformda da test edebilirim.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ADIM 2: TEST AŞAMASINDAKİ UYGULAMA SEÇİMİ -->
+      <div class="wizard-step-card" id="step2Card">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800;" data-i18n="beta.s2.title">Test Etmek İstediğiniz Uygulamaları Seçin</h2>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);" data-i18n="beta.s2.desc">Birden fazla uygulama veya oyun seçebilirsiniz. En az 1 seçim gereklidir.</p>
+          </div>
+        </div>
+
+        <div class="platform-grid" id="appSelector">
+          <label class="selectable-card selected">
+            <input type="checkbox" name="selected_apps" value="Mina's Pixel Pets" checked />
+            <div class="selectable-top">
+              <span class="app-category-tag coming-soon" style="display: inline-flex; align-items: center; gap: 6px;">
+                <img src="assets/img/icon-minaspixelpets.png" alt="Mina's Pixel Pets" style="width: 18px; height: 18px; border-radius: 4px;" />
+                <span data-i18n="beta.app1.tag">Oyunlar • Öncelikli Test</span>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong style="margin-top: 6px;" data-i18n="beta.app1.name">Mina's Pixel Pets</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.app1.desc">
+              Çok yakında çıkacak sanal evcil hayvan bakım oyunumuzun kapalı test süreci.
+            </span>
+          </label>
+
+          <label class="selectable-card">
+            <input type="checkbox" name="selected_apps" value="Dialpad T9 Plus" />
+            <div class="selectable-top">
+              <span class="app-category-tag" style="display: inline-flex; align-items: center; gap: 6px;">
+                <img src="assets/img/icon-dialpad.png?v=2" alt="Dialpad T9 Plus" style="width: 18px; height: 18px; border-radius: 4px;" />
+                <span data-i18n="beta.app2.tag">Araçlar • Sadece Android</span>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong style="margin-top: 6px;" data-i18n="beta.app2.name">Dialpad T9 Plus</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.app2.desc">
+              Akıllı T9 arama motoru ve rehber yönetiminin 14 günlük Google Play kapalı testi.
+            </span>
+          </label>
+
+          <label class="selectable-card">
+            <input type="checkbox" name="selected_apps" value="Tespih & Tasbih: Zikir & Dhikr" />
+            <div class="selectable-top">
+              <span class="app-category-tag" style="display: inline-flex; align-items: center; gap: 6px;">
+                <img src="assets/img/icon-tespih.png" alt="Tespih &amp; Tasbih" style="width: 18px; height: 18px; border-radius: 4px;" />
+                <span data-i18n="beta.app3.tag">Yaşam Tarzı • Erken Erişim</span>
+              </span>
+              <span class="check-indicator">✓</span>
+            </div>
+            <strong style="margin-top: 6px;" data-i18n="beta.app3.name">Tespih &amp; Tasbih: Zikir &amp; Dhikr</strong>
+            <span style="font-size: 0.82rem; color: var(--text-secondary);" data-i18n="beta.app3.desc">
+              iOS TestFlight ve yeni sürüm özelliklerinin kapalı testi.
+            </span>
+          </label>
+        </div>
+        <p id="appSelectError" style="display: none; color: #ef4444; font-size: 0.85rem; margin-top: 12px; font-weight: 600;" data-i18n="beta.app.error">
+          ⚠️ Lütfen test etmek istediğiniz en az bir uygulama seçin.
+        </p>
+      </div>
+
+      <!-- ADIM 3: PLATFORMA ÖZEL ZORUNLU BİLGİLER -->
+      <div class="wizard-step-card" id="step3Card">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800;" data-i18n="beta.s3.title">Platforma Özel Zorunlu Testçi Bilgileri</h2>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);" data-i18n="beta.s3.desc">Test davetiyesi gönderebilmemiz için gereklidir.</p>
+          </div>
+        </div>
+
+        <!-- ANDROID ZORUNLU ALANLARI -->
+        <div class="platform-req-box" id="androidFields">
+          <h3 style="font-size: 1.05rem; margin-bottom: 14px; color: var(--brand-cyan);" data-i18n="beta.android.header">
+            Google Play Kapalı Test Zorunlu Bilgileri
+          </h3>
+
+          <div class="form-group">
+            <label data-i18n="beta.android.email_label">Google Play Store'da Oturum Açtığınız Gmail / Google E-postası *</label>
+            <input
+              type="email"
+              id="googlePlayEmail"
+              name="google_play_email"
+              class="form-control"
+              placeholder="ornek@gmail.com"
+              data-i18n-placeholder="beta.android.email_ph"
+              required
+            />
+            <p class="field-hint" data-i18n="beta.android.email_hint">
+              ⚠️ Çok Önemli: Google Play kapalı test davet linkinin açılabilmesi için telefonunuzdaki Google Play Store uygulamasında aktif olan e-posta adresinizi yazmalısınız.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="beta.android.device_label">Android Telefon / Tablet Modeliniz *</label>
+            <input
+              type="text"
+              id="androidDevice"
+              name="android_device"
+              class="form-control"
+              placeholder="Örn: Samsung Galaxy S23, Xiaomi Redmi Note 12"
+              data-i18n-placeholder="beta.android.device_ph"
+              required
+            />
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="android14DaysRule" name="android_14_days_commitment" value="Evet, 14 gün yüklü tutmayı onaylıyorum" required />
+            <span data-i18n="beta.android.rule">
+              Google Play 14 Gün Kuralı Onayı: Google Play politikası gereği kapalı test davetini kabul ettikten sonra uygulamayı indirip 14 gün boyunca cihazımdan silmeyeceğimi onaylıyorum.
+            </span>
+          </label>
+        </div>
+
+        <!-- iOS TESTFLIGHT ZORUNLU ALANLARI -->
+        <div class="platform-req-box" id="iosFields" style="display: none; border-left-color: #a855f7;">
+          <h3 style="font-size: 1.05rem; margin-bottom: 14px; color: #a855f7;" data-i18n="beta.ios.header">
+            Apple TestFlight Zorunlu Bilgileri
+          </h3>
+
+          <div class="form-group">
+            <label data-i18n="beta.ios.name_label">Adınız ve Soyadınız *</label>
+            <input
+              type="text"
+              id="iosFullName"
+              name="ios_tester_name"
+              class="form-control"
+              placeholder="Örn: Caner Yılmaz"
+              data-i18n-placeholder="beta.ios.name_ph"
+            />
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="beta.ios.email_label">Apple ID / TestFlight E-posta Adresiniz *</label>
+            <input
+              type="email"
+              id="appleIdEmail"
+              name="apple_id_email"
+              class="form-control"
+              placeholder="appleid@icloud.com"
+              data-i18n-placeholder="beta.ios.email_ph"
+            />
+            <p class="field-hint" data-i18n="beta.ios.email_hint">
+              Apple TestFlight davet kodu bu e-posta adresinize gönderilecektir.
+            </p>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="beta.ios.device_label">iPhone / iPad Cihaz Modeliniz *</label>
+            <input
+              type="text"
+              id="iosDevice"
+              name="ios_device"
+              class="form-control"
+              placeholder="Örn: iPhone 14 Pro"
+              data-i18n-placeholder="beta.ios.device_ph"
+            />
+          </div>
+        </div>
+
+        <!-- ORTAK / İSTEĞE BAĞLI İLETİŞİM ALANI -->
+        <div class="form-group" style="margin-top: 18px;">
+          <label data-i18n="beta.opt.contact_label">Ek İletişim Notu — WhatsApp, Telegram veya Notunuz</label>
+          <input
+            type="text"
+            name="optional_contact_note"
+            class="form-control"
+            placeholder="WhatsApp, Telegram veya Notunuz"
+            data-i18n-placeholder="beta.opt.contact_ph"
+          />
+        </div>
+
+        <button type="submit" id="submitBetaBtn" class="btn btn-primary">
+          <span data-i18n="beta.btn.submit">Başvuruyu Gönder ve Test Ekibine Katıl</span>
+        </button>
+
+        <!-- Başarı ve Arka Plan E-posta Bildirim Alanı -->
+        <div id="betaSuccessBox" style="display: none; margin-top: 22px; padding: 24px; border-radius: 16px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4);">
+          <h4 style="color: #10b981; font-size: 1.15rem; margin-bottom: 8px;" data-i18n="beta.success.title">
+            Kapalı Test Başvurunuz Başarıyla Alındı!
+          </h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;" id="betaSuccessDesc" data-i18n="beta.success.desc">
+            Bilgileriniz geliştirici e-postasına iletildi. E-posta adresiniz kapalı test listesine eklendikten sonra indirme linkiniz gönderilecektir.
+          </p>
+          <pre id="betaPayloadPreview" style="background: var(--code-bg); padding: 14px; border-radius: 10px; font-size: 0.8rem; color: var(--text-primary); overflow-x: auto; white-space: pre-wrap;"></pre>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="assets/js/main.js?v=5"></script>
+  <script>
+    // =========================================================================
+    // Arka Planda E-Posta Gönderim Ayarı (FormSubmit.co — Ücretsiz & Sunucusuz)
+    // Kendi e-posta adresinizi buraya yazdığınızda tüm kapalı test başvuruları
+    // doğrudan gelen kutunuza düşer!
+    // =========================================================================
+    const DEVELOPER_EMAIL = "soltechinapps@gmail.com"; // soltechin resmi geliştirici e-posta adresi
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const platformCards = document.querySelectorAll("#platformSelector .selectable-card");
+      const appCards = document.querySelectorAll("#appSelector .selectable-card");
+      const androidFields = document.getElementById("androidFields");
+      const iosFields = document.getElementById("iosFields");
+
+      const googlePlayEmail = document.getElementById("googlePlayEmail");
+      const androidDevice = document.getElementById("androidDevice");
+      const android14DaysRule = document.getElementById("android14DaysRule");
+
+      const iosFullName = document.getElementById("iosFullName");
+      const appleIdEmail = document.getElementById("appleIdEmail");
+      const iosDevice = document.getElementById("iosDevice");
+
+      function updateRequiredFields(platform) {
+        const isAndroid = platform === "android" || platform === "both";
+        const isIOS = platform === "ios" || platform === "both";
+
+        androidFields.style.display = isAndroid ? "block" : "none";
+        googlePlayEmail.required = isAndroid;
+        androidDevice.required = isAndroid;
+        android14DaysRule.required = isAndroid;
+
+        iosFields.style.display = isIOS ? "block" : "none";
+        iosFullName.required = isIOS;
+        appleIdEmail.required = isIOS;
+        iosDevice.required = isIOS;
+      }
+
+      // Adım 1: Platform Seçimi
+      platformCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          platformCards.forEach((c) => c.classList.remove("selected"));
+          card.classList.add("selected");
+          const radio = card.querySelector("input[type='radio']");
+          radio.checked = true;
+          updateRequiredFields(card.getAttribute("data-platform"));
+        });
+      });
+
+      // URL Parametrelerine Göre Otomatik Seçim (?app=dialpad&platform=android vb.)
+      const urlParams = new URLSearchParams(window.location.search);
+      const reqPlatform = urlParams.get("platform");
+      const reqApp = urlParams.get("app");
+
+      if (reqPlatform) {
+        platformCards.forEach((c) => {
+          const match = c.getAttribute("data-platform") === reqPlatform;
+          c.classList.toggle("selected", match);
+          if (match) {
+            c.querySelector("input[type='radio']").checked = true;
+            updateRequiredFields(reqPlatform);
+          }
+        });
+      }
+
+      if (reqApp) {
+        appCards.forEach((c) => {
+          const cb = c.querySelector("input[type='checkbox']");
+          let match = false;
+          if (reqApp === "dialpad" && cb.value.includes("Dialpad")) match = true;
+          if (reqApp === "tespih" && cb.value.includes("Tespih")) match = true;
+          if (reqApp === "minaspixelpets" && cb.value.includes("Mina")) match = true;
+          cb.checked = match;
+          c.classList.toggle("selected", match);
+        });
+      }
+
+      // Adım 2: Uygulama Çoklu Seçimi
+      appCards.forEach((card) => {
+        const checkbox = card.querySelector("input[type='checkbox']");
+        checkbox.addEventListener("change", () => {
+          card.classList.toggle("selected", checkbox.checked);
+          document.getElementById("appSelectError").style.display = "none";
+        });
+      });
+
+      // Adım 3: Form Gönderimi ve Arka Planda E-posta İletimi
+      const form = document.getElementById("betaTesterForm");
+      const submitBtn = document.getElementById("submitBetaBtn");
+      const successBox = document.getElementById("betaSuccessBox");
+      const payloadPreview = document.getElementById("betaPayloadPreview");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const checkedApps = Array.from(document.querySelectorAll("input[name='selected_apps']:checked")).map(cb => cb.value);
+        if (checkedApps.length === 0) {
+          document.getElementById("appSelectError").style.display = "block";
+          return;
+        }
+
+        const formData = new FormData(form);
+        const payload = {
+          _subject: `🧪 [soltechin Kapalı Test Başvurusu] - ${formData.get("platform")}`,
+          _template: "table",
+          Platform: formData.get("platform"),
+          Secilen_Uygulamalar: checkedApps.join(", "),
+          Google_Play_Email: formData.get("google_play_email") || "-",
+          Android_Cihaz: formData.get("android_device") || "-",
+          Android_14_Gun_Sozu: formData.get("android_14_days_commitment") ? "Onaylandı ✅" : "-",
+          iOS_Ad_Soyad: formData.get("ios_tester_name") || "-",
+          Apple_ID_Email: formData.get("apple_id_email") || "-",
+          iOS_Cihaz: formData.get("ios_device") || "-",
+          Ek_Iletisim_Notu: formData.get("optional_contact_note") || "-"
+        };
+
+        const currentLang = localStorage.getItem("soltechin_lang") || "tr";
+        submitBtn.disabled = true;
+        submitBtn.textContent = currentLang === "tr" ? "⏳ Gönderiliyor..." : "⏳ Sending...";
+
+        try {
+          // FormSubmit.co üzerinden arka planda geliştirici gelen kutusuna mail gönderir
+          if (DEVELOPER_EMAIL) {
+            await fetch(`https://formsubmit.co/ajax/${DEVELOPER_EMAIL}`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify(payload)
+            });
+          }
+        } catch (err) {
+          console.warn("E-posta gönderim logu:", err);
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = currentLang === "tr" ? "Başvuruyu Gönder ve Test Ekibine Katıl" : "Submit Application & Join Beta Team";
+        successBox.style.display = "block";
+        payloadPreview.textContent =
+          (currentLang === "tr"
+            ? "📩 E-POSTA OLARAK GÖNDERİLEN VERİ ÖZETİ:\n----------------------------------------\n"
+            : "📩 SUMMARY OF SENT EMAIL DATA:\n----------------------------------------\n") +
+          `Recipient (Developer): ${DEVELOPER_EMAIL}\n` +
+          `Subject: ${payload._subject}\n` +
+          `Platform: ${payload.Platform}\n` +
+          `Selected Apps: ${payload.Secilen_Uygulamalar}\n` +
+          (payload.Google_Play_Email !== "-" ? `Google Play Email: ${payload.Google_Play_Email}\nAndroid Device: ${payload.Android_Cihaz}\n14-Day Commitment: ${payload.Android_14_Gun_Sozu}\n` : "") +
+          (payload.Apple_ID_Email !== "-" ? `iOS Tester Name: ${payload.iOS_Ad_Soyad}\nApple ID Email: ${payload.Apple_ID_Email}\niOS Device: ${payload.iOS_Cihaz}\n` : "") +
+          `Contact / Note: ${payload.Ek_Iletisim_Notu}`;
+
+        successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  </script>
+</body>
+</html>

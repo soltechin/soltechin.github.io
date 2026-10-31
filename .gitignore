@@ -1,0 +1,4 @@
+# Exclude local privacy-policies copy so GitHub Pages continues routing
+# to the independent soltechin/privacy-policies repository with ZERO downtime
+privacy-policies/
+.DS_Store

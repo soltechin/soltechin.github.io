@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mina's Pixel Pets — Çok Yakında! | soltechin Oyunlar</title>
+  <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=5" />
+  <style>
+    .game-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 36px 0;
+    }
+    .game-gallery-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .game-gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-purple);
+      box-shadow: var(--shadow-lg), 0 0 30px -5px rgba(168, 85, 247, 0.4);
+    }
+    .game-gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .game-gallery-info {
+      padding: 16px 20px;
+    }
+    .game-gallery-info h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .game-gallery-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .game-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.16) 0%, rgba(236, 72, 153, 0.16) 100%);
+      border: 1px solid var(--brand-purple);
+      color: #c084fc;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../../index.html" class="brand-logo">
+        <img src="../../assets/img/logo-icon.png" alt="soltechin Logo" />
+        <div class="brand-wordmark">
+          <div class="brand-name"><span class="brand-sol">sol</span><span class="brand-tech">tech</span><span class="brand-in">in</span></div>
+          <div class="brand-tagline">MOBILE APPS &amp; GAMES</div>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="../../index.html#apps" class="control-btn">
+          <span data-lang-block="tr">← Ana Sayfa</span>
+          <span data-lang-block="en" style="display: none;">← Home</span>
+        </a>
+        <div class="lang-select-wrapper">
+          <select id="langSelect" class="lang-select" aria-label="Dil / Language">
+            <option value="tr">🇹🇷 TR</option>
+            <option value="en">🇬🇧 EN</option>
+          </select>
+          <span class="lang-select-arrow" aria-hidden="true">▾</span>
+        </div>
+        <button class="control-btn" id="themeToggle" aria-label="Açık Temaya Geç" title="Açık Tema">☀️ Açık</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBPAGE HERO -->
+  <div class="subpage-hero" style="padding: 72px 0 54px;">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">soltechin</a> <span>/</span>
+        <a href="../../index.html#apps"><span data-lang-block="tr">Oyunlar</span><span data-lang-block="en" style="display: none;">Games</span></a> <span>/</span>
+        <strong>Mina's Pixel Pets</strong>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+        <div class="app-icon-box" style="width: 104px; height: 104px; border-radius: 26px; box-shadow: 0 16px 36px -8px rgba(168, 85, 247, 0.5);">
+          <img src="../../assets/img/icon-minaspixelpets.png" alt="Mina's Pixel Pets Logo" />
+        </div>
+        <div>
+          <div class="game-hero-badge">
+            <span>✨</span>
+            <span data-lang-block="tr">GELİŞTİRME AŞAMASINDA • ÇOK YAKINDA!</span>
+            <span data-lang-block="en" style="display: none;">IN DEVELOPMENT • COMING SOON!</span>
+          </div>
+          <h1 class="section-title" style="margin: 0 0 8px; font-size: clamp(2.2rem, 4vw, 3.2rem);">
+            Mina's Pixel Pets
+          </h1>
+          <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 640px;">
+            <span data-lang-block="tr">Sıcak, huzurlu ve çocuk dostu bir çevrimdışı sanal evcil hayvan bakım oyunu.</span>
+            <span data-lang-block="en" style="display: none;">A gentle, offline and kid-friendly virtual pet-care adventure.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="game-hero-actions" style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="../../beta-test.html?app=minaspixelpets" class="btn btn-primary">
+          <span data-lang-block="tr">🧪 Kapalı Beta Testçisi Ol →</span>
+          <span data-lang-block="en" style="display: none;">🧪 Join Closed Beta →</span>
+        </a>
+        <a href="#preview" class="btn btn-secondary">
+          <span data-lang-block="tr">🎨 Oyun Görsellerini İncele ↓</span>
+          <span data-lang-block="en" style="display: none;">🎨 Explore Game Previews ↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME DETAILS CONTAINER -->
+  <div class="container" style="padding: 64px 24px 96px;">
+
+    <!-- TURKISH CONTENT BLOCK -->
+    <div data-lang-block="tr">
+      <div class="section-header" style="text-align: left; margin-bottom: 28px;">
+        <div class="section-badge"><span class="dot"></span> OYUN HAKKINDA</div>
+        <h2 class="section-title">Kendi Sevimli Sanal Dünyanı Yarat</h2>
+        <p class="section-subtitle">
+          Mina's Pixel Pets, karmaşık oyun mekaniklerinden ve agresif reklamlardan uzak, huzur veren retro piksel sanatıyla tasarlandı. Farklı hayvanları büyüt, besle, sev ve odalarını dilediğin gibi dekore et.
+        </p>
+      </div>
+
+      <div class="services-grid" style="margin-bottom: 56px;">
+        <div class="service-card">
+          <div class="service-icon">🐾</div>
+          <h3>Sevimli Karakterler</h3>
+          <p>Ankara kedisinden sevimli köpeklere, pandalardan tavşanlara kadar onlarca cana yakın sanal dost.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛋️</div>
+          <h3>Oda &amp; Bahçe Dekorasyonu</h3>
+          <p>Oturma odası, açık hava parkı, kış köşesi ve huzurlu zen bahçesi gibi tematik yaşam alanları.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌦️</div>
+          <h3>Dinamik Mevsimler</h3>
+          <p>Kışın kar taneleri, baharda dökülen yapraklar ve sevimli ziyaretçiler eşliğinde değişen dünya.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📴</div>
+          <h3>Çevrimdışı Oynanış</h3>
+          <p>İnternet bağlantısı gerektirmez; çocuk ve aile dostu, pil tasarruflu sade mimari.</p>
+        </div>
+      </div>
+
+      <div id="preview" style="margin-bottom: 56px;">
+        <div class="section-badge"><span class="dot"></span> OYUN İÇİ MEKÂNLAR</div>
+        <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Tematik Odalar ve Mekânlar</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">Geliştirme aşamasındaki oyundan ilk konsept ve ortam görselleri:</p>
+
+        <div class="game-gallery-grid">
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-living.png" alt="Sıcak Oturma Odası" />
+            <div class="game-gallery-info">
+              <h4>🛋️ Sıcak Oturma Odası</h4>
+              <p>Evcil hayvanınızın koltukta mışıl mışıl uyuduğu dinlenme köşesi.</p>
+            </div>
+          </div>
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-park.png" alt="Açık Hava Parkı" />
+            <div class="game-gallery-info">
+              <h4>🌳 Açık Hava Parkı</h4>
+              <p>Güneşli günlerde hayvan dostlarınızla koşup eğlenebileceğiniz geniş alan.</p>
+            </div>
+          </div>
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-zen.png" alt="Zen Bahçesi" />
+            <div class="game-gallery-info">
+              <h4>🌸 Zen Bahçesi</h4>
+              <p>Doğal taşlar, kiraz çiçekleri ve huzur veren meditasyon atmosferi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="beta-banner" style="margin-top: 0;">
+        <div style="max-width: 640px;">
+          <div class="section-badge" style="margin-bottom: 8px;"><span class="dot"></span> MAĞAZA ÇIKIŞ PLANI</div>
+          <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 8px;">
+            Google Play ve App Store'da Çok Yakında!
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Mina's Pixel Pets şu an kapalı beta hazırlığındadır. Oyun mağazalara sunulmadan önce kapalı test ekibine katılarak ilk oynayanlardan biri olabilirsiniz.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="../../beta-test.html?app=minaspixelpets" class="btn btn-primary" style="padding: 14px 22px;">
+            🧪 Kapalı Teste Katıl →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGLISH CONTENT BLOCK -->
+    <div data-lang-block="en" style="display: none;">
+      <div class="section-header" style="text-align: left; margin-bottom: 28px;">
+        <div class="section-badge"><span class="dot"></span> ABOUT THE GAME</div>
+        <h2 class="section-title">Create Your Own Cozy Virtual Pet World</h2>
+        <p class="section-subtitle">
+          Mina's Pixel Pets is a gentle, relaxing pet care game featuring handcrafted retro pixel art. Free from aggressive ads and pay-to-win mechanics, it's designed for peaceful, mindful play.
+        </p>
+      </div>
+
+      <div class="services-grid" style="margin-bottom: 56px;">
+        <div class="service-card">
+          <div class="service-icon">🐾</div>
+          <h3>Charming Animal Friends</h3>
+          <p>From Turkish Angora cats to playful puppies, gentle pandas, and floppy-eared rabbits.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛋️</div>
+          <h3>Room &amp; Garden Decor</h3>
+          <p>Customize cozy living rooms, outdoor parks, snowy winter corners, and serene zen gardens.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌦️</div>
+          <h3>Dynamic Seasons &amp; Weather</h3>
+          <p>Gentle snowfalls in winter, falling autumn leaves, and visiting animal friends.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📴</div>
+          <h3>Offline Gameplay</h3>
+          <p>No internet connection required. Battery-friendly, safe, and kid-approved design.</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 56px;">
+        <div class="section-badge"><span class="dot"></span> IN-GAME ENVIRONMENTS</div>
+        <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Thematic Rooms &amp; Locations</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">Early concept environments and artwork from our in-development game:</p>
+
+        <div class="game-gallery-grid">
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-living.png" alt="Cozy Living Room" />
+            <div class="game-gallery-info">
+              <h4>🛋️ Cozy Living Room</h4>
+              <p>A relaxing sanctuary where your pet naps comfortably on the sofa.</p>
+            </div>
+          </div>
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-park.png" alt="Outdoor Park" />
+            <div class="game-gallery-info">
+              <h4>🌳 Outdoor Park</h4>
+              <p>A spacious green meadow for pets to run and play on sunny afternoons.</p>
+            </div>
+          </div>
+          <div class="game-gallery-card">
+            <img src="../../assets/img/minaspets-room-zen.png" alt="Zen Garden" />
+            <div class="game-gallery-info">
+              <h4>🌸 Serene Zen Garden</h4>
+              <p>Cherry blossoms, natural stones, and calming meditation vibes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="beta-banner" style="margin-top: 0;">
+        <div style="max-width: 640px;">
+          <div class="section-badge" style="margin-bottom: 8px;"><span class="dot"></span> RELEASE ROADMAP</div>
+          <h3 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 8px;">
+            Coming Soon to Google Play &amp; the App Store!
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Mina's Pixel Pets is currently preparing for closed beta. Join our testing community to play early and help shape the final release.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="../../beta-test.html?app=minaspixelpets" class="btn btn-primary" style="padding: 14px 22px;">
+            🧪 Join Closed Beta →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <span>© 2026 <strong>soltechin</strong>. 
+        <span data-lang-block="tr">Tüm hakları saklıdır.</span>
+        <span data-lang-block="en" style="display: none;">All rights reserved.</span>
+      </span>
+      <span>
+        <a href="../../index.html" style="color: var(--brand-cyan);">
+          <span data-lang-block="tr">← soltechin Ana Sayfa</span>
+          <span data-lang-block="en" style="display: none;">← soltechin Home</span>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js?v=5"></script>
+</body>
+</html>
