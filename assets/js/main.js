@@ -75,6 +75,7 @@ const translations = {
     "app.btn.soon": "Çok Yakında!",
     "app.link.details": "Uygulama Sayfası",
     "app.link.privacy": "Gizlilik Politikası",
+    "app.link.terms": "Hizmet Şartları",
     "about.badge": "HAKKIMIZDA",
     "about.title": "soltechin: Bağımsız Mobil Stüdyo",
     "about.p1": "soltechin, kullanıcı deneyimini merkeze alan bağımsız bir mobil uygulama ve oyun geliştirme stüdyosudur. Amacımız karmaşadan uzak, sade ve güvenilir mobil ürünler sunmaktır.",
@@ -260,6 +261,7 @@ const translations = {
     "app.btn.soon": "Coming Soon!",
     "app.link.details": "App Page",
     "app.link.privacy": "Privacy Policy",
+    "app.link.terms": "Terms of Service",
     "about.badge": "ABOUT US",
     "about.title": "soltechin: Independent Mobile Studio",
     "about.p1": "soltechin is an independent mobile app and game development studio focused on user experience. We build simple, reliable, and distraction-free mobile products.",
@@ -475,7 +477,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update document title dynamically based on route and language
     const path = window.location.pathname.toLowerCase();
-    if (path.includes("beta-test")) {
+    if (path.includes("terms")) {
+      if (path.includes("dialpad")) {
+        document.title = lang === "tr"
+          ? "Dialpad T9 Plus — Hizmet Şartları | soltechin"
+          : "Dialpad T9 Plus — Terms of Service | soltechin";
+      } else if (path.includes("tespih")) {
+        document.title = lang === "tr"
+          ? "Tespih & Tasbih: Zikir & Dhikr — Hizmet Şartları | soltechin"
+          : "Tespih & Tasbih: Zikir & Dhikr — Terms of Service | soltechin";
+      } else {
+        document.title = lang === "tr"
+          ? "Hizmet Şartları Belgeleri | soltechin"
+          : "Terms of Service Documents | soltechin";
+      }
+    } else if (path.includes("beta-test")) {
       document.title = lang === "tr" 
         ? "Kapalı Test Katılımcı Başvurusu — soltechin" 
         : "Closed Beta Tester Application — soltechin";
