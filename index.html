@@ -574,11 +574,14 @@
               <label data-i18n="contact.form.msg">Mesajınız</label>
               <textarea class="form-control" name="Mesaj" required placeholder="Mesajınızı buraya yazın..." data-i18n-placeholder="contact.form.msg_ph"></textarea>
             </div>
-            <p class="form-kvkk-note">
-              <span data-i18n="contact.kvkk_note">
-                Mesajınızı göndererek, kişisel verilerinizin <a href="kvkk/index.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında incelenmesi ve yanıtlanması amacıyla işlenmesini kabul etmiş olursunuz.
-              </span>
-            </p>
+            <div class="form-check" style="display: flex; align-items: flex-start; gap: 10px; margin: 14px 0 16px;">
+              <input type="checkbox" id="kvkkConsentCheck" name="KVKK_ve_Yurtdisi_Aktarim_Onayi" required style="margin-top: 3px; accent-color: var(--brand-cyan); width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;" />
+              <label for="kvkkConsentCheck" style="font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; line-height: 1.5;">
+                <span data-i18n="contact.form.consent">
+                  <a href="kvkk/index.html" target="_blank" style="color: var(--brand-cyan); text-decoration: underline;">KVKK Aydınlatma Metni</a>'ni okudum. Kişisel verilerimin iletişim talebimin yanıtlanması amacıyla işlenmesini ve teknik altyapı gereği güvenli yurtdışı sunucularına aktarılmasını onaylıyorum.
+                </span>
+              </label>
+            </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form.submit">
               Mesajı Gönder
             </button>
@@ -619,6 +622,7 @@
           <h4 data-i18n="footer.col.legal">Gizlilik &amp; Doğrulama</h4>
           <ul>
             <li><a href="kvkk/index.html" style="color: var(--brand-cyan); font-weight: 600;" data-i18n="footer.legal.kvkk">KVKK Aydınlatma Metni</a></li>
+            <li><a href="kunye/index.html" data-i18n="footer.legal.imprint">Yasal Künye &amp; Uyar-Kaldır</a></li>
             <li><a href="https://soltechin.github.io/privacy-policies/dialt9plus/" data-i18n="footer.privacy.dialpad">Dialpad T9 Plus — Gizlilik Politikası</a></li>
             <li><a href="https://soltechin.github.io/privacy-policies/" data-i18n="footer.privacy.tespih">Tespih &amp; Tasbih — Gizlilik Politikası</a></li>
             <li><a href="terms/dialpad-t9-plus/index.html">Dialpad T9 Plus — Hizmet Şartları</a></li>

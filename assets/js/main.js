@@ -195,9 +195,12 @@ const translations = {
     "cookie.btn_essential": "Yalnızca Zorunlular",
     "cookie.link_policy": "KVKK & Çerez Politikası →",
     "footer.legal.kvkk": "KVKK Aydınlatma Metni",
+    "footer.legal.imprint": "Yasal Künye & Uyar-Kaldır",
     "footer.legal.cookies": "Çerez Tercihleri",
     "contact.kvkk_note": "Mesajınızı göndererek, kişisel verilerinizin KVKK Aydınlatma Metni kapsamında incelenmesi ve yanıtlanması amacıyla işlenmesini kabul etmiş olursunuz.",
+    "contact.form.consent": "KVKK Aydınlatma Metni'ni okudum. Kişisel verilerimin iletişim talebimin yanıtlanması amacıyla işlenmesini ve teknik altyapı gereği güvenli yurtdışı sunucularına aktarılmasını onaylıyorum.",
     "beta.kvkk_note": "Başvurunuzu göndererek, sağladığınız testçi bilgilerinizin KVKK Aydınlatma Metni kapsamında kapalı test süreçleri için işlenmesini onaylamış olursunuz.",
+    "beta.form.consent": "KVKK Aydınlatma Metni'ni okudum. Sağladığım testçi bilgilerimin Google Play Console ve/veya Apple TestFlight sistemlerine kaydedilerek kapalı test davetiyesi gönderilmesi amacıyla işlenmesini ve yurtdışı uygulama mağazası sunucularına aktarılmasını onaylıyorum.",
     "theme.light": "Açık",
     "theme.dark": "Koyu"
 },
@@ -392,9 +395,12 @@ const translations = {
     "cookie.btn_essential": "Essential Only",
     "cookie.link_policy": "KVKK & Cookie Policy →",
     "footer.legal.kvkk": "KVKK Clarification Text",
+    "footer.legal.imprint": "Legal Imprint & Notice-Takedown",
     "footer.legal.cookies": "Cookie Preferences",
     "contact.kvkk_note": "By sending your message, you acknowledge that your personal data will be processed in accordance with our KVKK Clarification Text to respond to your inquiry.",
+    "contact.form.consent": "I have read the KVKK Clarification Text. I consent to the processing of my personal data to respond to my inquiry and its transfer to secure cross-border servers as technically required.",
     "beta.kvkk_note": "By submitting your tester application, you confirm that your provided information will be processed under our KVKK Clarification Text for closed testing purposes.",
+    "beta.form.consent": "I have read the KVKK Clarification Text. I consent to the enrollment of my testing credentials into Google Play Console and/or Apple TestFlight to receive beta invitations and the requisite cross-border data transfer to app store servers.",
     "theme.light": "Light",
     "theme.dark": "Dark"
 }
@@ -517,6 +523,10 @@ document.addEventListener("DOMContentLoaded", () => {
       document.title = lang === "tr"
         ? "KVKK Aydınlatma Metni & Çerez Politikası — soltechin"
         : "KVKK Clarification Text & Cookie Policy — soltechin";
+    } else if (path.includes("kunye")) {
+      document.title = lang === "tr"
+        ? "Yasal Künye & Uyar-Kaldır Bildirimi — soltechin"
+        : "Legal Imprint & Notice-and-Takedown — soltechin";
     } else if (path.includes("beta-test")) {
       document.title = lang === "tr" 
         ? "Kapalı Test Katılımcı Başvurusu — soltechin" 
@@ -652,7 +662,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const p = window.location.pathname.toLowerCase();
     if (p.includes("/apps/") || p.includes("/terms/dialpad") || p.includes("/terms/tespih")) {
       return "../../kvkk/index.html#cerez-politikasi";
-    } else if (p.includes("/terms/") || p.includes("/kvkk/")) {
+    } else if (p.includes("/terms/") || p.includes("/kvkk/") || p.includes("/kunye/")) {
       return "../kvkk/index.html#cerez-politikasi";
     }
     return "kvkk/index.html#cerez-politikasi";
