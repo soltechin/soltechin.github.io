@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="assets/css/style.css?v=8" />
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -574,6 +574,11 @@
               <label data-i18n="contact.form.msg">Mesajınız</label>
               <textarea class="form-control" name="Mesaj" required placeholder="Mesajınızı buraya yazın..." data-i18n-placeholder="contact.form.msg_ph"></textarea>
             </div>
+            <p class="form-kvkk-note">
+              <span data-i18n="contact.kvkk_note">
+                Mesajınızı göndererek, kişisel verilerinizin <a href="kvkk/index.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında incelenmesi ve yanıtlanması amacıyla işlenmesini kabul etmiş olursunuz.
+              </span>
+            </p>
             <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form.submit">
               Mesajı Gönder
             </button>
@@ -613,10 +618,13 @@
         <div class="footer-col">
           <h4 data-i18n="footer.col.legal">Gizlilik &amp; Doğrulama</h4>
           <ul>
+            <li><a href="kvkk/index.html" style="color: var(--brand-cyan); font-weight: 600;" data-i18n="footer.legal.kvkk">KVKK Aydınlatma Metni</a></li>
             <li><a href="https://soltechin.github.io/privacy-policies/dialt9plus/" data-i18n="footer.privacy.dialpad">Dialpad T9 Plus — Gizlilik Politikası</a></li>
             <li><a href="https://soltechin.github.io/privacy-policies/" data-i18n="footer.privacy.tespih">Tespih &amp; Tasbih — Gizlilik Politikası</a></li>
             <li><a href="terms/dialpad-t9-plus/index.html">Dialpad T9 Plus — Hizmet Şartları</a></li>
             <li><a href="terms/tespih-tasbih/index.html">Tespih &amp; Tasbih — Hizmet Şartları</a></li>
+            <li><a href="terms/index.html">Hizmet Şartları Dizini</a></li>
+            <li><a href="#cookie-settings" data-open-cookie-settings data-i18n="footer.legal.cookies">Çerez Tercihleri</a></li>
             <li><a href="app-ads.txt">app-ads.txt</a></li>
           </ul>
         </div>
@@ -639,6 +647,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=7"></script>
+  <script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

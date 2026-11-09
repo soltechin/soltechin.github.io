@@ -188,6 +188,16 @@ const translations = {
     "beta.btn.sending": "Gönderiliyor...",
     "beta.success.title": "Kapalı Test Başvurunuz Başarıyla Alındı!",
     "beta.success.desc": "Bilgileriniz geliştirici e-postasına iletildi. E-posta adresiniz kapalı test listesine eklendikten sonra indirme linkiniz gönderilecektir.",
+    "cookie.badge": "ÇEREZ BİLDİRİMİ",
+    "cookie.title": "Çerez ve Gizlilik Tercihleri",
+    "cookie.desc": "Sitemizde kullanıcı deneyiminizi geliştirmek, tema ve dil tercihlerinizi hatırlamak amacıyla zorunlu ve işlevsel yerel depolama/çerezler kullanıyoruz. Detaylı bilgi için KVKK Aydınlatma Metni ve Çerez Politikamızı inceleyebilirsiniz.",
+    "cookie.btn_accept": "Tümünü Kabul Et",
+    "cookie.btn_essential": "Yalnızca Zorunlular",
+    "cookie.link_policy": "KVKK & Çerez Politikası →",
+    "footer.legal.kvkk": "KVKK Aydınlatma Metni",
+    "footer.legal.cookies": "Çerez Tercihleri",
+    "contact.kvkk_note": "Mesajınızı göndererek, kişisel verilerinizin KVKK Aydınlatma Metni kapsamında incelenmesi ve yanıtlanması amacıyla işlenmesini kabul etmiş olursunuz.",
+    "beta.kvkk_note": "Başvurunuzu göndererek, sağladığınız testçi bilgilerinizin KVKK Aydınlatma Metni kapsamında kapalı test süreçleri için işlenmesini onaylamış olursunuz.",
     "theme.light": "Açık",
     "theme.dark": "Koyu"
 },
@@ -375,6 +385,16 @@ const translations = {
     "beta.btn.sending": "Sending...",
     "beta.success.title": "Closed Beta Application Received!",
     "beta.success.desc": "Your details were sent to our developer inbox. Once your email is enrolled in the beta track, you will receive an invitation email with download instructions.",
+    "cookie.badge": "COOKIE NOTICE",
+    "cookie.title": "Cookie & Privacy Preferences",
+    "cookie.desc": "We use essential and functional storage and cookies to enhance your browsing experience and remember your theme and language preferences. For detailed information, please review our KVKK Clarification Text & Cookie Policy.",
+    "cookie.btn_accept": "Accept All",
+    "cookie.btn_essential": "Essential Only",
+    "cookie.link_policy": "KVKK & Cookie Policy →",
+    "footer.legal.kvkk": "KVKK Clarification Text",
+    "footer.legal.cookies": "Cookie Preferences",
+    "contact.kvkk_note": "By sending your message, you acknowledge that your personal data will be processed in accordance with our KVKK Clarification Text to respond to your inquiry.",
+    "beta.kvkk_note": "By submitting your tester application, you confirm that your provided information will be processed under our KVKK Clarification Text for closed testing purposes.",
     "theme.light": "Light",
     "theme.dark": "Dark"
 }
@@ -493,6 +513,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ? "Hizmet Şartları Belgeleri | soltechin"
           : "Terms of Service Documents | soltechin";
       }
+    } else if (path.includes("kvkk")) {
+      document.title = lang === "tr"
+        ? "KVKK Aydınlatma Metni & Çerez Politikası — soltechin"
+        : "KVKK Clarification Text & Cookie Policy — soltechin";
     } else if (path.includes("beta-test")) {
       document.title = lang === "tr" 
         ? "Kapalı Test Katılımcı Başvurusu — soltechin" 
@@ -622,4 +646,120 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.reset();
     });
   }
+
+  // 7. Cookie Banner & Privacy Preferences Management
+  function getCookiePolicyUrl() {
+    const p = window.location.pathname.toLowerCase();
+    if (p.includes("/apps/") || p.includes("/terms/dialpad") || p.includes("/terms/tespih")) {
+      return "../../kvkk/index.html#cerez-politikasi";
+    } else if (p.includes("/terms/") || p.includes("/kvkk/")) {
+      return "../kvkk/index.html#cerez-politikasi";
+    }
+    return "kvkk/index.html#cerez-politikasi";
+  }
+
+  function initCookieBanner() {
+    let banner = document.getElementById("cookieBanner");
+    const currentLang = localStorage.getItem("soltechin_lang") || "tr";
+    const dict = translations[currentLang] || translations.tr;
+    const policyUrl = getCookiePolicyUrl();
+
+    if (!banner) {
+      banner = document.createElement("div");
+      banner.id = "cookieBanner";
+      banner.className = "cookie-banner";
+      banner.setAttribute("role", "dialog");
+      banner.setAttribute("aria-live", "polite");
+      banner.setAttribute("aria-label", "Çerez ve Gizlilik Bildirimi");
+      banner.innerHTML = `
+        <div class="cookie-banner-inner">
+          <div class="cookie-banner-header">
+            <div class="cookie-badge-pill">
+              <span class="cookie-icon">🍪</span>
+              <span class="cookie-badge-text" data-i18n="cookie.badge">${dict["cookie.badge"] || "ÇEREZ BİLDİRİMİ"}</span>
+            </div>
+            <button type="button" class="cookie-close-btn" id="cookieDismiss" aria-label="Kapat">✕</button>
+          </div>
+          <h4 class="cookie-banner-title" data-i18n="cookie.title">${dict["cookie.title"] || "Çerez ve Gizlilik Tercihleri"}</h4>
+          <p class="cookie-banner-desc" data-i18n="cookie.desc">
+            ${dict["cookie.desc"] || "Sitemizde kullanıcı deneyiminizi geliştirmek, tema ve dil tercihlerinizi hatırlamak amacıyla zorunlu ve işlevsel yerel depolama/çerezler kullanıyoruz. Detaylı bilgi için KVKK Aydınlatma Metni ve Çerez Politikamızı inceleyebilirsiniz."}
+          </p>
+          <div class="cookie-banner-actions">
+            <button type="button" class="btn btn-primary btn-sm cookie-btn-accept" id="cookieAcceptAll" data-i18n="cookie.btn_accept">
+              ${dict["cookie.btn_accept"] || "Tümünü Kabul Et"}
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm cookie-btn-essential" id="cookieAcceptEssential" data-i18n="cookie.btn_essential">
+              ${dict["cookie.btn_essential"] || "Yalnızca Zorunlular"}
+            </button>
+            <a href="${policyUrl}" class="cookie-policy-link" id="cookiePolicyLink" data-i18n="cookie.link_policy">
+              ${dict["cookie.link_policy"] || "KVKK & Çerez Politikası →"}
+            </a>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(banner);
+    }
+
+    const consent = localStorage.getItem("soltechin_cookie_consent");
+
+    function showBanner() {
+      banner.style.display = "block";
+      setTimeout(() => {
+        banner.classList.add("visible");
+      }, 50);
+    }
+
+    function hideBanner() {
+      banner.classList.remove("visible");
+      setTimeout(() => {
+        banner.style.display = "none";
+      }, 350);
+    }
+
+    // Auto show if not previously decided
+    if (!consent) {
+      setTimeout(showBanner, 700);
+    }
+
+    const btnAcceptAll = document.getElementById("cookieAcceptAll");
+    if (btnAcceptAll) {
+      btnAcceptAll.addEventListener("click", () => {
+        localStorage.setItem("soltechin_cookie_consent", "all");
+        hideBanner();
+      });
+    }
+
+    const btnAcceptEssential = document.getElementById("cookieAcceptEssential");
+    if (btnAcceptEssential) {
+      btnAcceptEssential.addEventListener("click", () => {
+        localStorage.setItem("soltechin_cookie_consent", "essential");
+        hideBanner();
+      });
+    }
+
+    const btnDismiss = document.getElementById("cookieDismiss");
+    if (btnDismiss) {
+      btnDismiss.addEventListener("click", () => {
+        if (!localStorage.getItem("soltechin_cookie_consent")) {
+          localStorage.setItem("soltechin_cookie_consent", "essential");
+        }
+        hideBanner();
+      });
+    }
+
+    // Connect open cookie settings triggers across pages
+    document.querySelectorAll("#openCookieSettings, [data-open-cookie-settings]").forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        showBanner();
+      });
+    });
+
+    window.soltechinCookieBanner = {
+      open: showBanner,
+      close: hideBanner
+    };
+  }
+
+  initCookieBanner();
 });

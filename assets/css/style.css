@@ -1891,3 +1891,168 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   KVKK Legal Notes & Cookie Banner
+   ========================================================================== */
+.form-kvkk-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 12px 0 16px;
+}
+
+.form-kvkk-note a {
+  color: var(--brand-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.form-kvkk-note a:hover {
+  opacity: 0.8;
+}
+
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 460px;
+  width: calc(100% - 48px);
+  z-index: 99999;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-highlight);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 32px -8px rgba(0, 210, 255, 0.22);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.cookie-banner.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cookie-banner-inner {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cookie-banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brand-cyan);
+  background: rgba(0, 210, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+}
+
+.cookie-icon {
+  font-size: 1rem;
+}
+
+.cookie-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  line-height: 1;
+}
+
+.cookie-close-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.cookie-banner-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cookie-banner-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.cookie-banner-actions .btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.cookie-policy-link {
+  font-size: 0.84rem;
+  color: var(--brand-cyan);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: auto;
+  transition: opacity 0.2s ease;
+}
+
+.cookie-policy-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .cookie-banner {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-width: none;
+  }
+  .cookie-banner-inner {
+    padding: 18px;
+  }
+  .cookie-banner-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-banner-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cookie-policy-link {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 4px;
+  }
+}
+
