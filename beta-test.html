@@ -13,7 +13,7 @@
   <title>Kapalı Test Programı &amp; Testçi Başvurusu — soltechin</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=9" />
+  <link rel="stylesheet" href="assets/css/style.css?v=10" />
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -104,7 +104,7 @@
       <ul class="beta-checklist">
         <li>
           <span class="beta-checklist-num">1</span>
-          <span data-i18n="beta.info.item1">Test etmek istediğiniz uygulama veya oyun (Mina's Pixel Pets, Dialpad T9 Plus, Tespih &amp; Tasbih)</span>
+          <span data-i18n="beta.info.item1">Test etmek istediğiniz uygulama (Dialpad T9 Plus veya Tespih &amp; Tasbih)</span>
         </li>
         <li>
           <span class="beta-checklist-num">2</span>
@@ -143,25 +143,7 @@
       </div>
 
       <div class="platform-grid" style="margin-top: 18px;">
-        <!-- APP 1 -->
-        <div class="selectable-card" style="cursor: default;">
-          <div class="selectable-top">
-            <span class="app-category-tag coming-soon" style="display: inline-flex; align-items: center; gap: 6px;">
-              <img src="assets/img/icon-minaspixelpets.png" alt="Mina's Pixel Pets" style="width: 18px; height: 18px; border-radius: 4px;" />
-              <span data-i18n="beta.app1.tag">Oyunlar • Öncelikli Test</span>
-            </span>
-            <span style="font-size: 0.8rem; color: var(--brand-cyan); font-weight: 700;">Android / iOS</span>
-          </div>
-          <strong style="margin-top: 6px; font-size: 1.05rem;" data-i18n="beta.app1.name">Mina's Pixel Pets</strong>
-          <span style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;" data-i18n="beta.app1.desc">
-            Çok yakında çıkacak sanal evcil hayvan bakım oyunumuzun kapalı test süreci.
-          </span>
-          <button type="button" class="btn btn-secondary btn-sm select-app-trigger" data-app-name="Mina's Pixel Pets" data-platform="Android & iOS" style="margin-top: auto; font-size: 0.82rem; padding: 8px 12px;">
-            <span data-i18n="beta.app.btn_apply">Bu Projeyi Test Et →</span>
-          </button>
-        </div>
-
-        <!-- APP 2 -->
+        <!-- APP 1: DIALPAD -->
         <div class="selectable-card" style="cursor: default;">
           <div class="selectable-top">
             <span class="app-category-tag" style="display: inline-flex; align-items: center; gap: 6px;">
@@ -179,7 +161,7 @@
           </button>
         </div>
 
-        <!-- APP 3 -->
+        <!-- APP 2: TESPIH -->
         <div class="selectable-card" style="cursor: default;">
           <div class="selectable-top">
             <span class="app-category-tag" style="display: inline-flex; align-items: center; gap: 6px;">
@@ -192,9 +174,18 @@
           <span style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;" data-i18n="beta.app3.desc">
             iOS TestFlight ve yeni sürüm özelliklerinin kapalı testi.
           </span>
-          <button type="button" class="btn btn-secondary btn-sm select-app-trigger" data-app-name="Tespih & Tasbih: Zikir & Dhikr" data-platform="iOS" style="margin-top: auto; font-size: 0.82rem; padding: 8px 12px;">
+          <button type="button" class="btn btn-secondary btn-sm select-app-trigger" data-app-name="Tespih &amp; Tasbih: Zikir &amp; Dhikr" data-platform="iOS" style="margin-top: auto; font-size: 0.82rem; padding: 8px 12px;">
             <span data-i18n="beta.app.btn_apply">Bu Projeyi Test Et →</span>
           </button>
+        </div>
+      </div>
+
+      <!-- MINA'S PIXEL PETS STATUS NOTE -->
+      <div style="margin-top: 20px; padding: 16px 20px; border-radius: var(--radius-sm); background: var(--bg-secondary); border: 1px dashed var(--border-color); display: flex; align-items: center; gap: 14px;">
+        <img src="assets/img/icon-minaspixelpets.png" alt="Mina's Pixel Pets" style="width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;" />
+        <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">
+          <strong style="color: var(--text-primary);">Mina's Pixel Pets:</strong> 
+          <span data-i18n="beta.minaspets_note">Bu oyunumuz şu an aktif geliştirme aşamasında olup kapalı test sürecinde değildir. Test süreci başladığında sitemizden ve sosyal medya hesaplarımızdan duyurulacaktır.</span>
         </div>
       </div>
     </div>
@@ -277,7 +268,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=9"></script>
+  <script src="assets/js/main.js?v=10"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const DEVELOPER_EMAIL = "soltechinapps@gmail.com";
@@ -296,7 +287,7 @@
             ? `[soltechin Kapalı Test] ${appName} Başvurusu` 
             : `[soltechin] Kapalı Test Programı Başvurusu`;
           body = `Merhaba soltechin Ekibi,\n\nKapalı test programınıza katılmak istiyorum.\n\n` +
-            `• Test Etmek İstediğim Proje: ${appName || "Mina's Pixel Pets / Dialpad T9 Plus / Tespih & Tasbih"}\n` +
+            `• Test Etmek İstediğim Proje: ${appName || "Dialpad T9 Plus veya Tespih & Tasbih"}\n` +
             `• Hedef Platformum: ${platform || "Android (Google Play) veya iOS (Apple TestFlight)"}\n` +
             `• Mağaza E-posta Adresim: \n` +
             `• Cihaz Modelim: \n\n` +
@@ -306,7 +297,7 @@
             ? `[soltechin Closed Beta] Application for ${appName}` 
             : `[soltechin] Closed Beta Testing Application`;
           body = `Hello soltechin Team,\n\nI would like to join your closed beta testing program.\n\n` +
-            `• Target App/Game: ${appName || "Mina's Pixel Pets / Dialpad T9 Plus / Tespih & Tasbih"}\n` +
+            `• Target App/Game: ${appName || "Dialpad T9 Plus or Tespih & Tasbih"}\n` +
             `• Platform: ${platform || "Android (Google Play) or iOS (Apple TestFlight)"}\n` +
             `• App Store Email: \n` +
             `• Device Model: \n\n` +
@@ -327,9 +318,6 @@
       if (reqAppParam === "dialpad") {
         initialApp = "Dialpad T9 Plus";
         initialPlatform = "Android";
-      } else if (reqAppParam === "minaspixelpets") {
-        initialApp = "Mina's Pixel Pets";
-        initialPlatform = reqPlatformParam || "Android & iOS";
       } else if (reqAppParam === "tespih") {
         initialApp = "Tespih & Tasbih: Zikir & Dhikr";
         initialPlatform = "iOS";
