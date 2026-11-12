@@ -118,9 +118,13 @@ const translations = {
     "contact.info.title": "İletişim Bilgileri",
     "contact.info.desc": "Her türlü soru, öneri veya geri bildiriminiz için bize dilediğiniz zaman yazabilirsiniz.",
     "contact.info.email": "E-posta / Destek",
+    "contact.info.response": "Genellikle 24–48 saat içinde yanıt verilir",
+    "contact.info.beta_cta": "Kapalı Beta başvuruları için doğrudan e-posta ile başvurabilirsiniz →",
     "contact.location.title": "Konum",
     "contact.location.val": "Alacaatlı, Ankara, Türkiye",
     "contact.social.title": "Sosyal Medya & Mağazalar",
+    "contact.form.title": "Bize Mesaj Gönderin",
+    "contact.form.subtitle": "Form yanıtlarınız güvenli altyapı üzerinden doğrudan soltechinapps@gmail.com adresimize ulaşır.",
     "contact.form.name": "Adınız Soyadınız",
     "contact.form.name_ph": "Örn: Caner Yılmaz",
     "contact.form.email": "E-posta Adresiniz",
@@ -177,7 +181,7 @@ const translations = {
     "beta.kvkk_box.suffix": "inceleyebilirsiniz.",
     "cookie.badge": "ÇEREZ BİLDİRİMİ",
     "cookie.title": "Çerez ve Gizlilik Tercihleri",
-    "cookie.desc": "Sitemizde kullanıcı deneyiminizi geliştirmek, tema ve dil tercihlerinizi hatırlamak amacıyla zorunlu ve işlevsel yerel depolama/çerezler kullanıyoruz. Detaylı bilgi için KVKK Aydınlatma Metni ve Çerez Politikamızı inceleyebilirsiniz.",
+    "cookie.desc": "Sitemizde tema ve dil tercihlerinizi hatırlamak için zorunlu yerel depolama ile yalnızca açık rızanız halinde anonim ziyaretçi istatistikleri (Google Tag Manager / Google Analytics) kullanılmaktadır. Reklam veya hedefleme çerezi kullanılmaz.",
     "cookie.btn_accept": "Tümünü Kabul Et",
     "cookie.btn_essential": "Yalnızca Zorunlular",
     "cookie.link_policy": "KVKK & Çerez Politikası →",
@@ -185,7 +189,7 @@ const translations = {
     "footer.legal.imprint": "Yasal Künye & Uyar-Kaldır",
     "footer.legal.cookies": "Çerez Tercihleri",
     "contact.kvkk_note": "Mesajınızı göndererek, kişisel verilerinizin KVKK Aydınlatma Metni kapsamında incelenmesi ve yanıtlanması amacıyla işlenmesini kabul etmiş olursunuz.",
-    "contact.form.consent": "KVKK Aydınlatma Metni'ni okudum. Kişisel verilerimin iletişim talebimin yanıtlanması amacıyla işlenmesini ve teknik altyapı gereği güvenli yurtdışı sunucularına aktarılmasını onaylıyorum.",
+    "contact.form.consent": "KVKK Aydınlatma Metni'ni okudum. İletişim formunu göndermekle, formdaki bilgilerimin talebimi yanıtlamak amacıyla teknik form sağlayıcısı (FormSubmit.co) aracılığıyla yurtdışı sunucular üzerinden işlenmesine ve aktarılmasına açık rıza veriyorum.",
     "beta.kvkk_note": "Başvurunuzu göndererek, sağladığınız testçi bilgilerinizin KVKK Aydınlatma Metni kapsamında kapalı test süreçleri için işlenmesini onaylamış olursunuz.",
     "beta.form.consent": "KVKK Aydınlatma Metni'ni okudum. Sağladığım testçi bilgilerimin Google Play Console ve/veya Apple TestFlight sistemlerine kaydedilerek kapalı test davetiyesi gönderilmesi amacıyla işlenmesini ve yurtdışı uygulama mağazası sunucularına aktarılmasını onaylıyorum.",
     "theme.light": "Açık",
@@ -305,9 +309,13 @@ const translations = {
     "contact.info.title": "Contact Information",
     "contact.info.desc": "Reach out for feedback, inquiries, or support anytime.",
     "contact.info.email": "Email / Support",
+    "contact.info.response": "Typically responds within 24–48 hours",
+    "contact.info.beta_cta": "Looking for Closed Beta? Apply directly via email →",
     "contact.location.title": "Location",
-    "contact.location.val": "Alacaatli, Ankara, Turkey",
+    "contact.location.val": "Alacaatli, Ankara, Türkiye",
     "contact.social.title": "Social Media & Stores",
+    "contact.form.title": "Send Us a Message",
+    "contact.form.subtitle": "Messages are delivered directly to soltechinapps@gmail.com via our secure form relay.",
     "contact.form.name": "Your Name",
     "contact.form.name_ph": "e.g., Alex Johnson",
     "contact.form.email": "Email Address",
@@ -364,7 +372,7 @@ const translations = {
     "beta.kvkk_box.suffix": ".",
     "cookie.badge": "COOKIE NOTICE",
     "cookie.title": "Cookie & Privacy Preferences",
-    "cookie.desc": "We use essential and functional storage and cookies to enhance your browsing experience and remember your theme and language preferences. For detailed information, please review our KVKK Clarification Text & Cookie Policy.",
+    "cookie.desc": "We use essential local storage to remember your theme and language preferences, and only with your explicit consent, anonymous visitor statistics via Google Tag Manager / Google Analytics. No advertising or retargeting cookies are used.",
     "cookie.btn_accept": "Accept All",
     "cookie.btn_essential": "Essential Only",
     "cookie.link_policy": "KVKK & Cookie Policy →",
@@ -372,7 +380,7 @@ const translations = {
     "footer.legal.imprint": "Legal Imprint & Notice-Takedown",
     "footer.legal.cookies": "Cookie Preferences",
     "contact.kvkk_note": "By sending your message, you acknowledge that your personal data will be processed in accordance with our KVKK Clarification Text to respond to your inquiry.",
-    "contact.form.consent": "I have read the KVKK Clarification Text. I consent to the processing of my personal data to respond to my inquiry and its transfer to secure cross-border servers as technically required.",
+    "contact.form.consent": "I have read the KVKK Clarification Text. By submitting this contact form, I explicitly consent to the processing and cross-border transfer of my form details via our form relay provider (FormSubmit.co) solely to answer my inquiry.",
     "beta.kvkk_note": "By submitting your tester application, you confirm that your provided information will be processed under our KVKK Clarification Text for closed testing purposes.",
     "beta.form.consent": "I have read the KVKK Clarification Text. I consent to the enrollment of my testing credentials into Google Play Console and/or Apple TestFlight to receive beta invitations and the requisite cross-border data transfer to app store servers.",
     "theme.light": "Light",
@@ -588,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const lang = localStorage.getItem("soltechin_lang") || "tr";
       const submitBtn = contactForm.querySelector("button[type='submit']");
-      const originalText = submitBtn ? submitBtn.textContent : "";
+      const originalHTML = submitBtn ? submitBtn.innerHTML : "";
 
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -603,7 +611,11 @@ document.addEventListener("DOMContentLoaded", () => {
       inputs.forEach((input) => {
         if (input.name || input.placeholder) {
           const key = input.getAttribute("name") || input.getAttribute("placeholder") || "field";
-          payload[key] = input.value;
+          if (input.type === "checkbox") {
+            payload[key] = input.checked ? "Onaylandı (Açık Rıza)" : "Onaylanmadı";
+          } else {
+            payload[key] = input.value;
+          }
         }
       });
 
@@ -622,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalHTML;
       }
 
       formFeedback.textContent = translations[lang]["contact.form.success"];
@@ -632,11 +644,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 7. Cookie Banner & Privacy Preferences Management
+  function updateAnalyticsConsent(granted) {
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: granted ? "granted" : "denied"
+      });
+    }
+  }
+
   function getCookiePolicyUrl() {
     const p = window.location.pathname.toLowerCase();
-    if (p.includes("/apps/") || p.includes("/terms/dialpad") || p.includes("/terms/tespih")) {
+    if (
+      p.includes("/apps/") ||
+      p.includes("/terms/dialpad") ||
+      p.includes("/terms/tespih") ||
+      p.includes("/privacy-policies/dialt9plus")
+    ) {
       return "../../kvkk/index.html#cerez-politikasi";
-    } else if (p.includes("/terms/") || p.includes("/kvkk/") || p.includes("/kunye/")) {
+    } else if (
+      p.includes("/terms/") ||
+      p.includes("/kvkk/") ||
+      p.includes("/kunye/") ||
+      p.includes("/privacy-policies")
+    ) {
       return "../kvkk/index.html#cerez-politikasi";
     }
     return "kvkk/index.html#cerez-politikasi";
@@ -709,6 +742,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnAcceptAll) {
       btnAcceptAll.addEventListener("click", () => {
         localStorage.setItem("soltechin_cookie_consent", "all");
+        updateAnalyticsConsent(true);
         hideBanner();
       });
     }
@@ -717,6 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnAcceptEssential) {
       btnAcceptEssential.addEventListener("click", () => {
         localStorage.setItem("soltechin_cookie_consent", "essential");
+        updateAnalyticsConsent(false);
         hideBanner();
       });
     }
@@ -726,6 +761,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btnDismiss.addEventListener("click", () => {
         if (!localStorage.getItem("soltechin_cookie_consent")) {
           localStorage.setItem("soltechin_cookie_consent", "essential");
+          updateAnalyticsConsent(false);
         }
         hideBanner();
       });

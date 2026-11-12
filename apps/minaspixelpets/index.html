@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
+  <!-- Google Consent Mode v2 + Google Tag Manager -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var analyticsGranted = false;
+      try {
+        analyticsGranted = localStorage.getItem('soltechin_cookie_consent') === 'all';
+      } catch (e) {}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+        'wait_for_update': 500
+      });
+    })();
     gtag('js', new Date());
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mina's Pixel Pets — Çok Yakında! | soltechin Oyunlar</title>
   <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=11" />
   <style>
     .game-gallery-grid {
       display: grid;
@@ -322,6 +335,6 @@
     </div>
   </footer>
 
-  <script src="../../assets/js/main.js?v=10"></script>
+  <script src="../../assets/js/main.js?v=11"></script>
 </body>
 </html>

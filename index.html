@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
+  <!-- Google Consent Mode v2 + Google Tag Manager -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var analyticsGranted = false;
+      try {
+        analyticsGranted = localStorage.getItem('soltechin_cookie_consent') === 'all';
+      } catch (e) {}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+        'wait_for_update': 500
+      });
+    })();
     gtag('js', new Date());
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
   <meta name="google-site-verification" content="Hm6sdgpVbzs0E8lmsZ9-DydbkFanm_SZz1u7_OBSzvU" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="assets/css/style.css?v=11" />
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -498,68 +511,106 @@
 
       <div class="contact-grid">
         <div class="contact-info-card">
-          <h3 data-i18n="contact.info.title">İletişim Bilgileri</h3>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 8px;" data-i18n="contact.info.desc">
-            Her türlü soru, öneri veya geri bildiriminiz için bize dilediğiniz zaman yazabilirsiniz.
-          </p>
-
-          <div class="contact-method">
-            <div class="contact-method-icon">✉️</div>
-            <div>
-              <strong data-i18n="contact.info.email">E-posta / Destek</strong>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                <a href="mailto:soltechinapps@gmail.com" style="color: inherit;">soltechinapps@gmail.com</a>
-              </p>
+          <div>
+            <div class="contact-status-pill">
+              <span class="status-dot"></span>
+              <span data-i18n="contact.info.response">Genellikle 24–48 saat içinde yanıt verilir</span>
             </div>
-          </div>
+            <h3 data-i18n="contact.info.title">İletişim Bilgileri</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 8px; line-height: 1.6;" data-i18n="contact.info.desc">
+              Her türlü soru, öneri veya geri bildiriminiz için bize dilediğiniz zaman yazabilirsiniz.
+            </p>
 
-          <div class="contact-method">
-            <div class="contact-method-icon">📍</div>
-            <div>
-              <strong data-i18n="contact.location.title">Konum</strong>
-              <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="contact.location.val">Alacaatlı, Ankara, Türkiye</p>
-            </div>
-          </div>
+            <div class="contact-methods-list">
+              <div class="contact-method">
+                <div class="contact-method-icon" aria-hidden="true">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong data-i18n="contact.info.email">E-posta / Destek</strong>
+                  <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan); text-decoration: none; font-weight: 500;">soltechinapps@gmail.com</a>
+                  </p>
+                </div>
+              </div>
 
-          <div class="contact-method">
-            <div class="contact-method-icon">🌐</div>
-            <div>
-              <strong data-i18n="contact.social.title">Sosyal Medya &amp; Mağazalar</strong>
-              <div class="social-links-list">
-                <a href="https://www.instagram.com/soltechinapps/" target="_blank" rel="noopener" class="social-pill-btn instagram-pill" title="Instagram: @soltechinapps">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              <div class="contact-method">
+                <div class="contact-method-icon" aria-hidden="true">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span>Instagram</span>
-                </a>
-                <a href="https://www.facebook.com/share/1H6FeoC8x4/" target="_blank" rel="noopener" class="social-pill-btn facebook-pill" title="Facebook">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </div>
+                <div>
+                  <strong data-i18n="contact.location.title">Konum</strong>
+                  <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="contact.location.val">Alacaatlı, Ankara, Türkiye</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-method-icon" aria-hidden="true">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
                   </svg>
-                  <span>Facebook</span>
-                </a>
-                <a href="https://github.com/soltechin" target="_blank" rel="noopener" class="social-pill-btn github-pill" title="GitHub">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                  <span>GitHub</span>
-                </a>
+                </div>
+                <div style="width: 100%;">
+                  <strong data-i18n="contact.social.title">Sosyal Medya &amp; Mağazalar</strong>
+                  <div class="social-links-list">
+                    <a href="https://www.instagram.com/soltechinapps/" target="_blank" rel="noopener" class="social-pill-btn instagram-pill" title="Instagram: @soltechinapps">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                      <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/share/1H6FeoC8x4/" target="_blank" rel="noopener" class="social-pill-btn facebook-pill" title="Facebook">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                      <span>Facebook</span>
+                    </a>
+                    <a href="https://github.com/soltechin" target="_blank" rel="noopener" class="social-pill-btn github-pill" title="GitHub">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="contact-beta-callout">
+            <a href="beta-test.html" data-i18n="contact.info.beta_cta">
+              Kapalı Beta başvuruları için doğrudan e-posta ile başvurabilirsiniz →
+            </a>
           </div>
         </div>
 
         <div class="contact-form-card">
+          <div class="contact-form-header">
+            <h3 data-i18n="contact.form.title">Bize Mesaj Gönderin</h3>
+            <p data-i18n="contact.form.subtitle">
+              Form yanıtlarınız güvenli altyapı üzerinden doğrudan soltechinapps@gmail.com adresimize ulaşır.
+            </p>
+          </div>
           <form id="contactForm">
-            <div class="form-group">
-              <label data-i18n="contact.form.name">Adınız Soyadınız</label>
-              <input type="text" name="Ad_Soyad" class="form-control" required placeholder="Örn: Caner Yılmaz" data-i18n-placeholder="contact.form.name_ph" />
-            </div>
-            <div class="form-group">
-              <label data-i18n="contact.form.email">E-posta Adresiniz</label>
-              <input type="email" name="Eposta" class="form-control" required placeholder="ornek@eposta.com" data-i18n-placeholder="contact.form.email_ph" />
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="contact.form.name">Adınız Soyadınız</label>
+                <input type="text" name="Ad_Soyad" class="form-control" required placeholder="Örn: Caner Yılmaz" data-i18n-placeholder="contact.form.name_ph" />
+              </div>
+              <div class="form-group">
+                <label data-i18n="contact.form.email">E-posta Adresiniz</label>
+                <input type="email" name="Eposta" class="form-control" required placeholder="ornek@eposta.com" data-i18n-placeholder="contact.form.email_ph" />
+              </div>
             </div>
             <div class="form-group">
               <label data-i18n="contact.form.topic">İlgili Uygulama / Konu</label>
@@ -574,17 +625,32 @@
               <label data-i18n="contact.form.msg">Mesajınız</label>
               <textarea class="form-control" name="Mesaj" required placeholder="Mesajınızı buraya yazın..." data-i18n-placeholder="contact.form.msg_ph"></textarea>
             </div>
-            <div class="form-check" style="display: flex; align-items: flex-start; gap: 10px; margin: 14px 0 16px;">
-              <input type="checkbox" id="kvkkConsentCheck" name="KVKK_ve_Yurtdisi_Aktarim_Onayi" required style="margin-top: 3px; accent-color: var(--brand-cyan); width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;" />
-              <label for="kvkkConsentCheck" style="font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; line-height: 1.5;">
-                <span data-i18n="contact.form.consent">
-                  <a href="kvkk/index.html" target="_blank" style="color: var(--brand-cyan); text-decoration: underline;">KVKK Aydınlatma Metni</a>'ni okudum. Kişisel verilerimin iletişim talebimin yanıtlanması amacıyla işlenmesini ve teknik altyapı gereği güvenli yurtdışı sunucularına aktarılmasını onaylıyorum.
+            <div class="consent-box">
+              <input type="checkbox" id="kvkkConsentCheck" name="Form_Yurtdisi_Aktarim_Onayi" required />
+              <label for="kvkkConsentCheck">
+                <span data-lang-block="tr">
+                  <a href="kvkk/index.html" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum. İletişim formunu göndermekle, formdaki bilgilerimin talebimi yanıtlamak amacıyla teknik form sağlayıcısı (FormSubmit.co) aracılığıyla yurtdışı sunucular üzerinden işlenmesine ve aktarılmasına açık rıza veriyorum.
+                </span>
+                <span data-lang-block="en" style="display: none;">
+                  I have read the <a href="kvkk/index.html" target="_blank">KVKK Clarification Text</a>. By submitting this contact form, I explicitly consent to the processing and cross-border transfer of my form details via our form relay provider (FormSubmit.co) solely to answer my inquiry.
                 </span>
               </label>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.form.submit">
-              Mesajı Gönder
+            <button type="submit" class="btn btn-primary contact-submit-btn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+              <span data-i18n="contact.form.submit">Mesajı Gönder</span>
             </button>
+            <p class="contact-alt-notice">
+              <span data-lang-block="tr">
+                Form kullanmak istemezseniz doğrudan <a href="mailto:soltechinapps@gmail.com">soltechinapps@gmail.com</a> adresine e-posta gönderebilirsiniz.
+              </span>
+              <span data-lang-block="en" style="display: none;">
+                If you prefer not to use the form, you can email us directly at <a href="mailto:soltechinapps@gmail.com">soltechinapps@gmail.com</a>.
+              </span>
+            </p>
             <p id="formFeedback" style="display: none; margin-top: 14px; color: #10b981; font-weight: 600; text-align: center;"></p>
           </form>
         </div>
@@ -651,6 +717,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=10"></script>
+  <script src="assets/js/main.js?v=11"></script>
 </body>
 </html>

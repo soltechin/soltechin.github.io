@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
+  <!-- Google Consent Mode v2 + Google Tag Manager -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var analyticsGranted = false;
+      try {
+        analyticsGranted = localStorage.getItem('soltechin_cookie_consent') === 'all';
+      } catch (e) {}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+        'wait_for_update': 500
+      });
+    })();
     gtag('js', new Date());
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KVKK Aydınlatma Metni &amp; Çerez Politikası — soltechin</title>
@@ -16,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=11" />
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -98,23 +111,23 @@
 
         <h2>2. İşlenen Kişisel Veriler ve Veri Kategorileri</h2>
         <p>
-          Sitemizi ziyaretiniz, iletişim formlarımızı doldurmanız veya kapalı test programlarımıza başvurmanız esnasında aşağıdaki veri kategorileri işlenmektedir:
+          Sitemizi ziyaretiniz, iletişim formumuzu doldurmanız veya e-posta yoluyla kapalı test programlarımıza başvurmanız esnasında aşağıdaki veri kategorileri işlenmektedir:
         </p>
         <ul>
-          <li><strong>Kimlik Verisi:</strong> Adınız, soyadınız (İletişim formu ve Apple TestFlight testçi başvuru formunda beyan ettiğiniz bilgiler).</li>
-          <li><strong>İletişim Verisi:</strong> E-posta adresiniz (İletişim formu kanalıyla iletilen e-posta, Google Play Kapalı Test programı için sağladığınız aktif Gmail/Google hesabı, Apple TestFlight davetiyesi için iletilen Apple ID e-postası), isteğe bağlı ilettiğiniz WhatsApp, Telegram veya ek iletişim notları.</li>
+          <li><strong>Kimlik Verisi:</strong> Adınız ve soyadınız (Yalnızca iletişim formu veya doğrudan e-posta üzerinden sizin tarafınızdan beyan edilmesi halinde).</li>
+          <li><strong>İletişim Verisi:</strong> E-posta adresiniz (İletişim formu kanalıyla iletilen e-posta adresi veya Google Play Kapalı Test / Apple TestFlight davetiyesi için kendi e-posta istemcinizle <code>soltechinapps@gmail.com</code> adresine gönderdiğiniz Gmail / Apple ID e-postası).</li>
           <li><strong>Müşteri İşlem ve Talep Bilgisi:</strong> İletişim formu aracılığıyla seçilen konu başlığı (Dialpad T9 Plus, Tespih &amp; Tasbih, Mina's Pixel Pets, Genel/İş Birliği), mesaj metni, soru, öneri, hata (bug) bildirimi, geri bildirim ve talep içerikleri.</li>
           <li><strong>İşlem Güvenliği ve Teknik Kayıt Verileri:</strong> İnternet sitesi sunucu erişim günlükleri (GitHub Pages hosting altyapısı tarafından tutulan IP adresi, erişim tarihi ve saat damgası, HTTP yanıt kodları, yönlendiren URL (referrer), tarayıcı bilgisi ve kullanıcı aracısı (User-Agent)).</li>
-          <li><strong>Cihaz ve Testçi Teknik Bilgileri (Kapalı Test Süreçlerinde):</strong> Testçi adayının kullandığı telefon/tablet modeli (ör. Samsung Galaxy S23, iPhone 14 Pro), işletim sistemi sürümü (Android/iOS sürümü), seçilen test uygulamaları ve Google Play 14 günlük test süreci taahhüt onayı.</li>
-          <li><strong>Kullanıcı Tercihleri ve Yerel Depolama (LocalStorage / Çerezler):</strong> Sitemizde deneyiminizi kişiselleştirmek için tarayıcınızda saklanan arayüz tema tercihi (koyu/açık: <code>soltechin_theme</code>), dil tercihi (Türkçe/İngilizce: <code>soltechin_lang</code>) ve çerez onay tercihiniz (<code>soltechin_cookie_consent</code>).</li>
+          <li><strong>Kullanıcı Tercihleri ve Anonim Ziyaretçi İstatistikleri (LocalStorage / Çerezler):</strong> Sitemizde deneyiminizi kişiselleştirmek için tarayıcınızda saklanan arayüz tema tercihi (koyu/açık: <code>soltechin_theme</code>), dil tercihi (Türkçe/İngilizce: <code>soltechin_lang</code>), çerez onay tercihiniz (<code>soltechin_cookie_consent</code>) ve yalnızca açık rızanız halinde Google Consent Mode v2 çerçevesinde işlenen anonim ziyaretçi sayısı/sayfa görüntüleme istatistikleri.</li>
         </ul>
 
         <h2>3. Kişisel Verilerin İşlenme Amaçları</h2>
         <p>Kişisel verileriniz KVKK Madde 4'te düzenlenen genel ilkelere uygun olarak aşağıdaki amaçlarla işlenmektedir:</p>
         <ul>
-          <li>İletişim formu veya e-posta yoluyla ilettiğiniz soru, görüş, öneri, hata ve destek bildirimlerinin incelenmesi, cevaplandırılması ve kullanıcı memnuniyetinin sağlanması,</li>
-          <li>Google Play Kapalı Test ve Apple TestFlight erken erişim programlarına başvurularınızın değerlendirilmesi, geliştirici konsollarına (Google Play Console ve Apple App Store Connect) testçi olarak eklenmeniz ve test davet linklerinin tarafınıza ulaştırılması,</li>
+          <li>İletişim formu veya doğrudan e-posta yoluyla ilettiğiniz soru, görüş, öneri, hata ve destek bildirimlerinin incelenmesi, cevaplandırılması ve kullanıcı memnuniyetinin sağlanması,</li>
+          <li>Google Play Kapalı Test ve Apple TestFlight erken erişim programlarına e-posta yoluyla yaptığınız başvuruların değerlendirilmesi, geliştirici konsollarına (Google Play Console ve Apple App Store Connect) testçi olarak eklenmeniz ve test davet linklerinin tarafınıza ulaştırılması,</li>
           <li>Geliştirilmekte olan mobil uygulama ve oyunlarımızın (Dialpad T9 Plus, Tespih &amp; Tasbih, Mina's Pixel Pets vb.) performans, hata ve kullanıcı deneyimi testlerinin yürütülmesi,</li>
+          <li>Sitemizi ziyaret eden toplam ziyaretçi sayısının ve sayfa performansının (yalnızca açık rızanız doğrultusunda) anonim olarak ölçülmesi,</li>
           <li>İnternet sitemizin bilgi güvenliğinin, sunucu sürekliliğinin ve teknik performansının temin edilmesi; kötü niyetli girişimlerin, siber saldırıların tespiti ve engellenmesi,</li>
           <li>Sitede kullanıcı tercihlerinize uygun görüntüleme (tema ve dil seçimi) deneyiminin sunulması ve bu tercihlerin bir sonraki ziyaretinizde hatırlanması,</li>
           <li>İleride doğabilecek olası hukuki uyuşmazlıklarda ispat yükümlülüğünün yerine getirilmesi, yasal haklarımızın tesisi, kullanılması veya savunulması,</li>
@@ -123,17 +136,17 @@
 
         <h2>4. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebepleri</h2>
         <p>
-          <strong>Toplanma Yöntemi:</strong> Kişisel verileriniz; sitemizde yer alan İletişim Formu ve Kapalı Test Başvuru Formu'nun sizin tarafınızdan doldurulması, doğrudan e-posta gönderilmesi, tarayıcınızın sitemizi ziyareti esnasında otomatik olarak kaydedilen sunucu logları ve tarayıcınızın yerel depolama mekanizmaları (localStorage/çerezler) vasıtasıyla tamamen veya kısmen otomatik yöntemlerle toplanmaktadır.
+          <strong>Toplanma Yöntemi:</strong> Kişisel verileriniz; sitemizde yer alan İletişim Formu'nun sizin tarafınızdan doldurulması, doğrudan <code>soltechinapps@gmail.com</code> adresine e-posta gönderilmesi, tarayıcınızın sitemizi ziyareti esnasında otomatik olarak kaydedilen sunucu logları, yerel depolama mekanizmaları (localStorage) ve rıza vermeniz halinde Google Tag Manager / Google Analytics ölçüm etiketleri vasıtasıyla tamamen veya kısmen otomatik yöntemlerle toplanmaktadır.
         </p>
         <p>
           <strong>Hukuki Sebepler (KVKK Madde 5):</strong> Kişisel verileriniz Kanun'un 5. maddesinde belirtilen aşağıdaki hukuki sebepler doğrultusunda işlenmektedir:
         </p>
         <ul>
-          <li><strong>Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (KVKK m. 5/2-c):</strong> Kapalı test programı başvurusunun kabul edilmesi, test bağlantılarının gönderilmesi ve talep ettiğiniz desteğin sunulması.</li>
+          <li><strong>Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (KVKK m. 5/2-c):</strong> E-posta yoluyla yapılan kapalı test programı başvurusunun kabul edilmesi, test bağlantılarının gönderilmesi ve talep ettiğiniz desteğin sunulması.</li>
           <li><strong>Veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması (KVKK m. 5/2-f):</strong> Temel hak ve özgürlüklerinize zarar vermemek kaydıyla; sitemizin güvenliğinin sağlanması, teknik işleyişin denetlenmesi, hata raporlarının çözümlenmesi ve uygulama kalitesinin artırılması.</li>
           <li><strong>Bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması (KVKK m. 5/2-e):</strong> Olası hukuki uyuşmazlıklarda delil saklama ve hak arama hürriyetinin kullanılması.</li>
           <li><strong>Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması (KVKK m. 5/2-ç):</strong> Yetkili resmi makamlarca talep edilen yasal bildirimlerin karşılanması.</li>
-          <li><strong>Açık Rıza (KVKK m. 5/1):</strong> Mevzuat gereği açık rıza aranan hallerde (örneğin isteğe bağlı ek iletişim bilgisi verilmesi).</li>
+          <li><strong>Açık Rıza (KVKK m. 5/1 ve m. 9):</strong> İletişim formu aracılığıyla yurtdışı form sağlayıcısı üzerinden mesaj iletilmesi ve çerez banner'ında "Tümünü Kabul Et" tercihiyle analitik ölçüm çerezlerinin etkinleştirilmesi hallerinde.</li>
         </ul>
 
         <h2>5. Kişisel Verilerin Aktarılması ve Yurtdışı Aktarım Bildirimi</h2>
@@ -142,8 +155,9 @@
         </p>
         <ul>
           <li><strong>Barındırma (Hosting) Altyapısı (GitHub Pages / GitHub Inc. - ABD):</strong> İnternet sitemiz GitHub Pages altyapısı üzerinde yayınlanmaktadır. Sunucuların yurtdışında bulunması sebebiyle, site erişiminde otomatik oluşan sunucu erişim günlükleri (IP, tarih, saat) teknik zorunluluk gereği GitHub sunucularında işlenmektedir.</li>
-          <li><strong>Form İletim ve E-posta Altyapısı (FormSubmit &amp; Google Gmail - ABD/AB):</strong> Sitemiz üzerinden ilettiğiniz iletişim ve test formları, FormSubmit altyapısı ve Google Workspace/Gmail üzerinden geliştirici gelen kutumuza güvenli şekilde e-posta formatında ulaştırılmaktadır.</li>
-          <li><strong>Uygulama Test Konsolları (Google LLC &amp; Apple Inc.):</strong> Kapalı test başvurunuz onaylandığında, test davet bağlantısının tarafınıza mağaza tarafından gönderilebilmesi için e-posta adresiniz Google Play Console veya Apple App Store Connect test gruplarına kaydedilmektedir.</li>
+          <li><strong>İletişim Formu İletim ve E-posta Altyapısı (FormSubmit.co &amp; Google Gmail - ABD/AB):</strong> Yalnızca web sitemizdeki iletişim formunu kullanmayı tercih etmeniz halinde, form mesajınız FormSubmit altyapısı aracılığıyla geliştirici e-posta kutumuza (Gmail) iletilir. Form kullanmak istemeyen kullanıcılarımız her zaman doğrudan <code>soltechinapps@gmail.com</code> adresine e-posta gönderebilir.</li>
+          <li><strong>Analitik Ölçüm Altyapısı (Google LLC - ABD / Google Consent Mode v2):</strong> Yalnızca çerez bildiriminden "Tümünü Kabul Et" seçeneğini tercih etmeniz durumunda, anonim ziyaretçi sayısı ölçümü amacıyla Google Tag Manager / Google Analytics (<code>GTM-N96SBWG2</code>) işlevsel hale gelir. Reklam ve kişiselleştirme sinyalleri tüm ziyaretçiler için varsayılan olarak kapalı (<code>denied</code>) tutulur.</li>
+          <li><strong>Uygulama Test Konsolları (Google LLC &amp; Apple Inc.):</strong> E-posta ile ilettiğiniz kapalı test başvurunuz onaylandığında, test davet bağlantısının tarafınıza mağaza tarafından gönderilebilmesi için e-posta adresiniz Google Play Console veya Apple App Store Connect test gruplarına kaydedilmektedir.</li>
           <li><strong>Kanunen Yetkili Kurum ve Kuruluşlar:</strong> Mevzuatın amir hükümleri gereğince yürürlükteki kanunlara uygun biçimde yetkili kamu kurum, kuruluş ve adli mercilerden gelecek bağlayıcı talepler doğrultusunda.</li>
         </ul>
 
@@ -192,7 +206,7 @@
           <strong>Çerez ve Yerel Depolama Nedir?</strong> Çerezler (cookies) ve modern web standartlarında yer alan Yerel Depolama (HTML5 LocalStorage), internet sitelerinin kullanıcıların cihazlarında küçük metin veya veri parçaları depolayarak kullanıcı tercihlerini hatırlamasına, oturum yönetimini sağlamasına ve site deneyimini iyileştirmesine imkan tanıyan teknolojilerdir.
         </p>
         <p>
-          <strong>Sitemizde Kullanılan Teknolojiler:</strong> soltechin internet sitesinde gizlilik-öncelikli bir mimari uygulanmakta olup, <strong>üçüncü taraf reklam takipçisi, pazarlama pikselleri veya davranışsal profilleme çerezleri KULLANILMAMAKTADIR</strong>. Sitemizde yalnızca aşağıdaki zorunlu ve işlevsel yerel depolama anahtarları kullanılmaktadır:
+          <strong>Sitemizde Kullanılan Teknolojiler:</strong> soltechin internet sitesinde gizlilik-öncelikli bir mimari uygulanmakta olup, <strong>üçüncü taraf reklam takipçisi, pazarlama pikselleri veya davranışsal reklam/hedefleme çerezleri KULLANILMAMAKTADIR</strong>. Sitemizde yalnızca aşağıdaki zorunlu yerel depolama anahtarları ile — sadece açık onayınız halinde — anonim ziyaretçi sayımı için Google Tag Manager / Google Analytics kullanılmaktadır:
         </p>
         <ul>
           <li>
@@ -206,6 +220,10 @@
           <li>
             <strong><code>soltechin_cookie_consent</code> (Zorunlu Yerel Depolama):</strong><br />
             Kullanıcının çerez bildirim banner'ına verdiği onay veya tercih durumunu saklar ("all" veya "essential"). Bu sayede her sayfada çerez banner'ının tekrar tekrar ekrana gelerek kullanıcıyı rahatsız etmesi engellenir. Süre: Kalıcı.
+          </li>
+          <li>
+            <strong>Google Tag Manager / Google Analytics (<code>GTM-N96SBWG2</code> — İsteğe Bağlı Analitik, Google Consent Mode v2):</strong><br />
+            Yalnızca web sitemizi ziyaret eden toplam ziyaretçi sayısını ve sayfa trafik istatistiklerini anonim olarak görüntülemek amacıyla kullanılır. Varsayılan durumda tüm analitik ve reklam çerezleri <code>denied</code> (kapalı) olarak ayarlıdır; reklam depolama ve kişiselleştirme (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) hiçbir koşulda açılmaz. Sadece çerez bildiriminden <strong>"Tümünü Kabul Et"</strong> seçeneğine tıkladığınızda <code>_ga</code> / <code>_ga_*</code> analitik çerezleri (<code>analytics_storage: granted</code>) etkinleşir. <strong>"Yalnızca Zorunlular"</strong> seçiminde analitik çerezleri yerleştirilmez.
           </li>
         </ul>
 
@@ -297,23 +315,23 @@
 
         <h2>2. Categories of Processed Personal Data</h2>
         <p>
-          Depending on your interactions with our website, contact forms, and beta testing enrollment, we process the following data categories:
+          Depending on your interactions with our website, contact form, or email-based closed testing applications, we process the following data categories:
         </p>
         <ul>
-          <li><strong>Identity Data:</strong> Full name (as provided in contact inquiries and Apple TestFlight tester applications).</li>
-          <li><strong>Contact Data:</strong> Email address (inquiry contact email, active Gmail/Google Play account for Android closed testing, Apple ID email for TestFlight invitations), optional phone number, WhatsApp, or Telegram handles.</li>
+          <li><strong>Identity Data:</strong> Full name (only when voluntarily provided via our contact form or direct email inquiries).</li>
+          <li><strong>Contact Data:</strong> Email address (submitted via the contact form, or your Gmail / Apple ID email when applying directly via your own email client to <code>soltechinapps@gmail.com</code> for Google Play Closed Testing or Apple TestFlight invitations).</li>
           <li><strong>Inquiry &amp; Support Data:</strong> Subject matter selection (Dialpad T9 Plus, Tespih &amp; Tasbih, Mina's Pixel Pets, General/Partnership), message body, feedback, questions, bug reports, and correspondence records.</li>
           <li><strong>Security &amp; Technical Log Data:</strong> Internet server access records generated by our hosting provider (GitHub Pages), including IP address, access timestamp, HTTP response status codes, referring URL, browser information, and user agent string.</li>
-          <li><strong>Device &amp; Tester Technical Data (for Closed Beta Testing):</strong> Mobile device make and model (e.g. Samsung Galaxy S23, iPhone 14 Pro), mobile operating system version (Android/iOS release), requested test applications, and 14-day continuous testing commitment consent.</li>
-          <li><strong>User Preferences &amp; Local Storage (LocalStorage / Cookies):</strong> Browser local storage entries used to preserve UI theme preferences (dark/light: <code>soltechin_theme</code>), language preferences (TR/EN: <code>soltechin_lang</code>), and cookie consent preferences (<code>soltechin_cookie_consent</code>).</li>
+          <li><strong>User Preferences &amp; Anonymous Visitor Analytics (LocalStorage / Cookies):</strong> Browser local storage entries used to preserve UI theme preferences (dark/light: <code>soltechin_theme</code>), language preferences (TR/EN: <code>soltechin_lang</code>), cookie consent preferences (<code>soltechin_cookie_consent</code>), and—only with your explicit consent—anonymous aggregate visitor count statistics under Google Consent Mode v2.</li>
         </ul>
 
         <h2>3. Purposes of Processing Personal Data</h2>
         <p>Personal data is processed for the following legitimate purposes:</p>
         <ul>
           <li>Reviewing, responding to, and resolving inquiries, bug reports, feedback, and technical support requests submitted via the contact form or email,</li>
-          <li>Evaluating applications for Google Play Closed Testing and Apple TestFlight tracks, enrolling eligible testers into developer consoles, and delivering official invitation links,</li>
+          <li>Evaluating applications for Google Play Closed Testing and Apple TestFlight tracks submitted via email, enrolling eligible testers into developer consoles, and delivering official invitation links,</li>
           <li>Conducting performance, usability, and stability tests for our upcoming applications and games based on community feedback,</li>
+          <li>Measuring aggregate visitor traffic and page views anonymously (strictly upon your explicit consent),</li>
           <li>Ensuring the operational security, technical integrity, and resilience of our website infrastructure against cyber incidents and unauthorized access,</li>
           <li>Providing a seamless user experience by remembering your preferred language and display theme,</li>
           <li>Fulfilling legal burden of proof and establishing, exercising, or defending statutory legal claims in potential disputes,</li>
@@ -322,17 +340,17 @@
 
         <h2>4. Data Collection Methods &amp; Legal Grounds</h2>
         <p>
-          <strong>Collection Methods:</strong> Personal data is collected through electronic form submissions on our website, direct email correspondence sent to soltechinapps@gmail.com, automated server logs maintained by GitHub Pages hosting, and HTML5 browser local storage keys.
+          <strong>Collection Methods:</strong> Personal data is collected through the electronic contact form on our website, direct email correspondence sent to <code>soltechinapps@gmail.com</code>, automated server logs maintained by GitHub Pages hosting, HTML5 browser local storage keys, and—only with explicit consent—Google Tag Manager / Google Analytics measurement tags.
         </p>
         <p>
           <strong>Legal Bases (under KVKK Article 5 &amp; GDPR Article 6):</strong>
         </p>
         <ul>
-          <li><strong>Contract Performance &amp; Pre-contractual Requests (KVKK Art. 5/2-c, GDPR Art. 6/1-b):</strong> Enrolling testers into beta programs, delivering store invites, and fulfilling support inquiries requested by users.</li>
+          <li><strong>Contract Performance &amp; Pre-contractual Requests (KVKK Art. 5/2-c, GDPR Art. 6/1-b):</strong> Enrolling testers into beta programs upon their email request, delivering store invites, and fulfilling support inquiries requested by users.</li>
           <li><strong>Legitimate Interests of the Controller (KVKK Art. 5/2-f, GDPR Art. 6/1-f):</strong> Ensuring cybersecurity, technical operation of our web services, quality assessment, and application development without infringing upon fundamental rights.</li>
           <li><strong>Legal Claims &amp; Defense (KVKK Art. 5/2-e, GDPR Art. 6/1-f):</strong> Establishing, defending, or asserting legal rights and maintaining proof of compliance.</li>
           <li><strong>Legal Obligations (KVKK Art. 5/2-ç, GDPR Art. 6/1-c):</strong> Compliance with binding statutory requirements and legal reporting duties.</li>
-          <li><strong>Explicit Consent (KVKK Art. 5/1, GDPR Art. 6/1-a):</strong> Where explicit opt-in consent is required by applicable law (e.g., non-essential preferences or optional contact handles).</li>
+          <li><strong>Explicit Consent (KVKK Art. 5/1 &amp; Art. 9, GDPR Art. 6/1-a):</strong> Submitting inquiries through the cross-border contact form relay (FormSubmit.co) or opting in via the cookie banner ("Accept All") to allow anonymous analytics measurement cookies.</li>
         </ul>
 
         <h2>5. Data Transfers &amp; Cross-Border Transfers</h2>
@@ -341,8 +359,9 @@
         </p>
         <ul>
           <li><strong>Hosting Infrastructure (GitHub Pages / GitHub Inc. - USA):</strong> Hosted on GitHub Pages. Due to server locations, technical access logs are stored on GitHub infrastructure under their security protocols.</li>
-          <li><strong>Form Processing &amp; Mail Services (FormSubmit &amp; Google Gmail - USA/EU):</strong> Contact inquiries and beta enrollment forms are securely routed via FormSubmit and delivered to our developer Google Workspace inbox.</li>
-          <li><strong>App Store Testing Platforms (Google LLC &amp; Apple Inc.):</strong> For approved testers, emails are registered into Google Play Console and Apple App Store Connect exclusively to transmit test invitations.</li>
+          <li><strong>Contact Form Relay &amp; Mail Services (FormSubmit.co &amp; Google Gmail - USA/EU):</strong> Solely when you choose to use the website contact form, your inquiry is routed via FormSubmit.co and delivered to our developer Gmail inbox. Users who prefer not to use the web form may always email <code>soltechinapps@gmail.com</code> directly.</li>
+          <li><strong>Analytics Measurement (Google LLC - USA / Google Consent Mode v2):</strong> Only if you choose "Accept All" in the cookie banner, Google Tag Manager / Google Analytics (<code>GTM-N96SBWG2</code>) is permitted to place analytics cookies solely to measure anonymous visitor counts. Advertising and personalization signals remain permanently set to <code>denied</code>.</li>
+          <li><strong>App Store Testing Platforms (Google LLC &amp; Apple Inc.):</strong> For testers who apply via email, approved email addresses are registered into Google Play Console or Apple App Store Connect exclusively to transmit store test invitations.</li>
           <li><strong>Judicial &amp; Law Enforcement Authorities:</strong> When strictly mandated by binding court orders or statutory legal processes.</li>
         </ul>
 
@@ -391,7 +410,7 @@
           <strong>What are Cookies and Local Storage?</strong> Cookies and HTML5 LocalStorage are standard web technologies allowing websites to store small pieces of data locally on your device to remember user settings, enable essential features, and improve responsiveness.
         </p>
         <p>
-          <strong>Technologies Deployed on Our Website:</strong> soltechin operates on a privacy-by-design framework. <strong>We DO NOT deploy third-party advertising trackers, retargeting beacons, or behavioral profiling cookies</strong>. Only the following essential and functional storage items are used:
+          <strong>Technologies Deployed on Our Website:</strong> soltechin operates on a privacy-by-design framework. <strong>We DO NOT deploy third-party advertising trackers, retargeting beacons, or behavioral profiling cookies</strong>. We only use the following essential browser storage items and, strictly upon your explicit consent, anonymous aggregate analytics via Google Tag Manager / Google Analytics:
         </p>
         <ul>
           <li>
@@ -405,6 +424,10 @@
           <li>
             <strong><code>soltechin_cookie_consent</code> (Essential Local Storage):</strong><br />
             Remembers your cookie banner preference ("all" or "essential") so the banner is not repeatedly presented on every page load. Duration: Persistent.
+          </li>
+          <li>
+            <strong>Google Tag Manager / Google Analytics (<code>GTM-N96SBWG2</code> — Optional Analytics via Google Consent Mode v2):</strong><br />
+            Used exclusively to understand aggregate visitor counts and page traffic anonymously. By default, all analytics and advertising storage parameters are set to <code>denied</code>, and advertising/personalization signals (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) remain permanently <code>denied</code>. Analytics cookies (<code>_ga</code> / <code>_ga_*</code>, <code>analytics_storage: granted</code>) are activated only if you explicitly select <strong>"Accept All"</strong>. Choosing <strong>"Essential Only"</strong> keeps analytics cookies disabled.
           </li>
         </ul>
 
@@ -421,6 +444,7 @@
               Reset All Stored Preferences
             </button>
           </div>
+          <p id="cookiePrefFeedbackEn" style="display: none; margin: 10px 0 0; font-size: 0.85rem; color: #10b981; font-weight: 600;"></p>
         </div>
 
         <p><strong>Managing and Disabling Cookies in Your Browser:</strong></p>
@@ -529,24 +553,35 @@
     </div>
   </footer>
 
-  <script src="../assets/js/main.js?v=10"></script>
+  <script src="../assets/js/main.js?v=11"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const btnClear = document.getElementById("btnClearPreferences");
       const btnClearEn = document.getElementById("btnClearPreferencesEn");
-      const feedback = document.getElementById("cookiePrefFeedback");
+      const feedbacks = [
+        document.getElementById("cookiePrefFeedback"),
+        document.getElementById("cookiePrefFeedbackEn")
+      ].filter(Boolean);
 
       function handleClear() {
+        const lang = localStorage.getItem("soltechin_lang") || "tr";
         localStorage.removeItem("soltechin_cookie_consent");
         localStorage.removeItem("soltechin_theme");
         localStorage.removeItem("soltechin_lang");
-        if (feedback) {
-          const lang = localStorage.getItem("soltechin_lang") || "tr";
-          feedback.textContent = lang === "tr"
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", {
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            analytics_storage: "denied"
+          });
+        }
+        feedbacks.forEach((el) => {
+          el.textContent = lang === "tr"
             ? "✓ Tercihleriniz sıfırlandı. Sayfa yenileniyor..."
             : "✓ Preferences cleared. Reloading page...";
-          feedback.style.display = "block";
-        }
+          el.style.display = "block";
+        });
         setTimeout(() => {
           window.location.reload();
         }, 800);

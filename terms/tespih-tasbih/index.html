@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
+  <!-- Google Consent Mode v2 + Google Tag Manager -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    (function() {
+      var analyticsGranted = false;
+      try {
+        analyticsGranted = localStorage.getItem('soltechin_cookie_consent') === 'all';
+      } catch (e) {}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+        'wait_for_update': 500
+      });
+    })();
     gtag('js', new Date());
   </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N96SBWG2"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tespih &amp; Tasbih: Zikir &amp; Dhikr — Hizmet Şartları | soltechin</title>
   <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../assets/css/style.css?v=10" />
+  <link rel="stylesheet" href="../../assets/css/style.css?v=11" />
 </head>
 <body>
   <div class="ambient-glow"></div>
@@ -121,7 +134,7 @@
         <p>Uygulama'nın kaynak kodları, grafikleri, ses efektleri, logoları ve telif hakları münhasıran Geliştirici'ye aittir.</p>
         <ul>
           <li><strong>Hile, Bot ve Tersine Mühendislik Yasağı:</strong> Kullanıcı; uygulama üzerinde tersine mühendislik yapmayacağını, kaynak kodu ayrıştırmayacağını, otomatik botlar, oto-tıklayıcılar, emülatörler veya reklam sistemlerini manipüle eden sahte trafik araçları kullanmayacağını, IAP ve lisans denetimlerini atlatmaya yönelik araçlar çalıştırmayacağını kabul eder. Bu kuralın ihlali nedeniyle Geliştirici Taraf'ın reklam ağları (AdMob) veya mağazalar nezdinde uğrayacağı tüm cezai ve maddi zararlar münhasıran kullanıcıya rücu edilir.</li>
-          <li><strong>Telif Hakkı Şikayetleri (DMCA / Safe Harbor):</strong> Uygulama içindeki herhangi bir içeriğin telif hakkınızı ihlal ettiğini düşünüyorsanız, doğrudan yasal yollara başvurmadan önce derhal <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> veya <a href="mailto:dionysossp@gmail.com" style="color: var(--brand-cyan);">dionysossp@gmail.com</a> adresine yazılı bildirimde bulunmanız gerekir. Bildirim incelenerek haklı bulunması halinde ilgili içerik makul sürede kaldırılacaktır.</li>
+          <li><strong>Telif Hakkı Şikayetleri (DMCA / Safe Harbor):</strong> Uygulama içindeki herhangi bir içeriğin telif hakkınızı ihlal ettiğini düşünüyorsanız, doğrudan yasal yollara başvurmadan önce derhal <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> adresine yazılı bildirimde bulunmanız gerekir. Bildirim incelenerek haklı bulunması halinde ilgili içerik makul sürede kaldırılacaktır.</li>
         </ul>
 
         <h2>9. Gizlilik Politikası Entegrasyonu</h2>
@@ -150,7 +163,7 @@
           <li><strong>Şartların Değiştirilmesi ve Yürürlük Usulü:</strong> Geliştirici, işbu Şartları dilediği zaman güncelleme hakkını saklı tutar. Güncel metin web sitesinde yayımlandığı anda derhal yürürlüğe girer; uygulamanın kullanılmaya devam edilmesi yeni şartların kabulü sayılır.</li>
           <li><strong>Bölünebilirlik (Severability):</strong> Herhangi bir maddenin geçersiz sayılması, kalan maddelerin geçerliliğini etkilemez.</li>
         </ul>
-        <p><strong>Destek ve İletişim:</strong> <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> | <a href="mailto:dionysossp@gmail.com" style="color: var(--brand-cyan);">dionysossp@gmail.com</a></p>
+        <p><strong>Destek ve İletişim:</strong> <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a></p>
       </div>
 
       <hr class="legal-divider" />
@@ -209,7 +222,7 @@
         <p>All intellectual property rights in the App remain exclusively with the Developer.</p>
         <ul>
           <li><strong>Anti-Tampering &amp; Ad-Fraud Prohibition:</strong> You agree not to decompile, reverse engineer, or tamper with the App, nor utilize automated bots, auto-clickers, emulators, ad-fraud mechanisms, or tools designed to bypass in-app purchase verifications. Any financial or legal damages incurred by Developer Parties due to ad network penalties (e.g. AdMob invalid traffic) or store suspensions resulting from your violation will be indemnified by you in full.</li>
-          <li><strong>DMCA / Copyright Notices (Safe Harbor):</strong> If you believe any content or asset in the App infringes your copyright, you agree to provide written notice to <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> or <a href="mailto:dionysossp@gmail.com" style="color: var(--brand-cyan);">dionysossp@gmail.com</a> prior to initiating any legal proceedings. Legitimate infringing materials will be removed promptly.</li>
+          <li><strong>DMCA / Copyright Notices (Safe Harbor):</strong> If you believe any content or asset in the App infringes your copyright, you agree to provide written notice to <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> prior to initiating any legal proceedings. Legitimate infringing materials will be removed promptly.</li>
         </ul>
 
         <h2>9. Privacy Policy Incorporation</h2>
@@ -238,12 +251,12 @@
           <li><strong>Modifications to Terms:</strong> The Developer reserves the right to modify these Terms at any time. Revised Terms take effect immediately upon posting on this website. Your continued use of the App constitutes binding acceptance of the updated Terms.</li>
           <li><strong>Severability:</strong> If any provision is deemed unenforceable, all remaining provisions remain fully intact.</li>
         </ul>
-        <p><strong>Support &amp; Contact:</strong> <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a> | <a href="mailto:dionysossp@gmail.com" style="color: var(--brand-cyan);">dionysossp@gmail.com</a></p>
+        <p><strong>Support &amp; Contact:</strong> <a href="mailto:soltechinapps@gmail.com" style="color: var(--brand-cyan);">soltechinapps@gmail.com</a></p>
       </div>
 
     </div>
   </div>
 
-  <script src="../../assets/js/main.js?v=10"></script>
+  <script src="../../assets/js/main.js?v=11"></script>
 </body>
 </html>
